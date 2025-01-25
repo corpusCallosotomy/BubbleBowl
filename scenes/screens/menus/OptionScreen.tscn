@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://caxrx5kkdirjr"]
+[gd_scene load_steps=9 format=3 uid="uid://caxrx5kkdirjr"]
 
+[ext_resource type="Texture2D" uid="uid://lkgpki1evqsg" path="res://art/UI/Buttons/Back_Button_Hover.png" id="1_ji15t"]
+[ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_vyydg"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_70uss"]
-[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/Back_Button.png" id="2_gjmad"]
+[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/UI/Buttons/Back_Button.png" id="2_gjmad"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/settings/muteToggle.gd" id="2_sk5rp"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/settings/volume_slider.gd" id="3_v5bpy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxgou"]
+texture = ExtResource("1_ji15t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4gdx"]
+texture = ExtResource("2_gjmad")
 
 [node name="OptionScreen" type="Control"]
 layout_mode = 3
@@ -41,6 +49,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 2.51
+theme_override_fonts/normal_font = ExtResource("1_vyydg")
 theme_override_font_sizes/normal_font_size = 106
 bbcode_enabled = true
 text = "[center]Options Menu[/center]"
@@ -54,15 +63,16 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -176.235
-offset_top = 9.145
-offset_right = -8.23499
-offset_bottom = 141.145
+offset_left = -176.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = 170.0
 grow_horizontal = 0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 90
-icon = ExtResource("2_gjmad")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mxgou")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i4gdx")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_70uss")

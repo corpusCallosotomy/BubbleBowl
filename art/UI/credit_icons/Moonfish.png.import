@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmu4yme53cyil"
-path="res://.godot/imported/stefan.png-1daf2f1fdfa25aa605fd75b381aa8402.ctex"
+uid="uid://bng4dhp6dprao"
+path="res://.godot/imported/Moonfish.png-491d600a2bf281d1252c275a5b072999.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/credit_icons/stefan.png"
-dest_files=["res://.godot/imported/stefan.png-1daf2f1fdfa25aa605fd75b381aa8402.ctex"]
+source_file="res://art/UI/credit_icons/Moonfish.png"
+dest_files=["res://.godot/imported/Moonfish.png-491d600a2bf281d1252c275a5b072999.ctex"]
 
 [params]
 

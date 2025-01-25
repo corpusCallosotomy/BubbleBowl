@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://baja085pndt5f"]
+[gd_scene load_steps=12 format=3 uid="uid://baja085pndt5f"]
 
-[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_ycf7h"]
+[ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_o1mm5"]
+[ext_resource type="Texture2D" uid="uid://lkgpki1evqsg" path="res://art/UI/Buttons/Back_Button_Hover.png" id="1_x2pen"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_gv7wd"]
-[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/Back_Button.png" id="2_tvifm"]
+[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/UI/Buttons/Back_Button.png" id="2_tvifm"]
+[ext_resource type="Texture2D" uid="uid://b6mmuy17p4u77" path="res://art/UI/Buttons/Button_Highlighted.png" id="4_2rrbq"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/settings/sliderLabel.gd" id="4_sbjtm"]
+[ext_resource type="Texture2D" uid="uid://bfhf585p6v86g" path="res://art/UI/Buttons/Button_Base.png" id="5_b3l0v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2dexy"]
+texture = ExtResource("1_x2pen")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtic7"]
+texture = ExtResource("2_tvifm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4u8f7"]
+texture = ExtResource("4_2rrbq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwivh"]
+texture = ExtResource("5_b3l0v")
 
 [node name="GameModeScreen" type="Control"]
 layout_mode = 3
@@ -41,6 +56,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 2.51
+theme_override_fonts/normal_font = ExtResource("1_o1mm5")
 theme_override_font_sizes/normal_font_size = 106
 bbcode_enabled = true
 text = "[center]Match Settings[/center]"
@@ -54,15 +70,16 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -176.235
-offset_top = 9.145
-offset_right = -8.23499
-offset_bottom = 141.145
+offset_left = -176.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = 161.0
 grow_horizontal = 0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 90
-icon = ExtResource("2_tvifm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2dexy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dtic7")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_gv7wd")
@@ -241,18 +258,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayButton" type="Button" parent="CanvasLayer"]
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -212.0
+offset_left = -333.0
+offset_top = -225.0
+offset_right = 339.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0.443137, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.443137, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_o1mm5")
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxTexture_4u8f7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wwivh")
 text = "PLAY!"
-icon = ExtResource("1_ycf7h")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_gv7wd")
