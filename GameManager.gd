@@ -2,7 +2,10 @@ extends Node
 
 
 
-var scores  = []
+var scores  = [] # holds the scores for each team.
+var players =[] # holds objects that represent players
+var bubbles =[] # holds objects for all bubbles on screen
+
 
 
 
