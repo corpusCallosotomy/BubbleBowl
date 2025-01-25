@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lkgpki1evqsg"
-path="res://.godot/imported/Back_Button_Hover.png-936acb1def5f72c56b806b06eb0b4048.ctex"
+uid="uid://qoo2rshqtl53"
+path="res://.godot/imported/Sand_Texture_V2.png-673cc4d6f56be62b1cd22f2ac669257d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Back_Button_Hover.png"
-dest_files=["res://.godot/imported/Back_Button_Hover.png-936acb1def5f72c56b806b06eb0b4048.ctex"]
+source_file="res://VFX/Sand_Texture_V2.png"
+dest_files=["res://.godot/imported/Sand_Texture_V2.png-673cc4d6f56be62b1cd22f2ac669257d.ctex"]
 
 [params]
 
