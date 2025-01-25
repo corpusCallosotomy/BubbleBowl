@@ -17,7 +17,8 @@ func _on_body_entered(body):
 	#print(body)
 	if body.is_in_group("Bubble"):
 		body.queue_free()
+		var scoreToAdd = body.bubbleValue
 		if isPlayer1Goal:
-			MatchData.score_p1+=1
+			MatchData.score_p1+=scoreToAdd
 		else:
-			MatchData.score_p2+=1
+			MatchData.score_p2+=scoreToAdd
