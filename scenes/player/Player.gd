@@ -8,7 +8,7 @@ const MAXSPEED: float = 1000.0
 const ACCELERATION: float = 1000.0
 const DECELERATION: float = 1000.0
 
-
+var facingAngle: float = 0.0
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(velocity * delta)
@@ -26,6 +26,10 @@ func _physics_process(delta):
 		direction = Input.get_vector("P2_left", "P2_right", "P2_up", "P2_down")
 	velocity += direction * SPEED
 	
+	if(direction.length_squared() > 0.01):
+		facingAngle = direction.angle() - (PI/2.0)
+	
+	$Icon.rotation = lerpf($Icon.rotation, facingAngle, delta * 50)
 	
 	#for collisionAmount in get_slide_collision_count():
 		#var collision = get_slide_collision(collisionAmount)
