@@ -1,12 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://pbnhy6mm8f56"]
+[gd_scene load_steps=3 format=3 uid="uid://pbnhy6mm8f56"]
 
-[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_wfyrs"]
+[ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
+[ext_resource type="PackedScene" uid="uid://ckhissng2jj1m" path="res://scenes/bubbles/Bubble.tscn" id="2_rqac2"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(445, 233)
-texture = ExtResource("1_wfyrs")
+[node name="Player" parent="." instance=ExtResource("1_etxjp")]
+position = Vector2(144, 397)
+
+[node name="Player2" parent="." instance=ExtResource("1_etxjp")]
+position = Vector2(1713, 565)
+isPlayer1 = false
+
+[node name="Bubble" parent="." instance=ExtResource("2_rqac2")]
+position = Vector2(845, 512)
