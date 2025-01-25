@@ -1,10 +1,9 @@
 extends RigidBody2D
 
-@export var collisionShape: CollisionShape2D
-#@export var bounceForce: float = 10.0
-# Called when the node enters the scene tree for the first time.
+@export var bubbleSize: int = 1
+
 func _ready():
-	pass # Replace with function body.
+	self.body_entered.connect(bodyEntered)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,8 +11,26 @@ func _process(_delta):
 	pass
 
 
+func bodyEntered(body):
+	#print("Bubble hit a body")
+	if body.is_in_group("Bubble"):
+		#print("Bubble hit a bubble")
+		if body.bubbleSize==self.bubbleSize:
+			
+			var selfIndex = self.get_index()
+			var bodyIndex = body.get_index()
+
+			if selfIndex>bodyIndex:
+				self.queue_free()
+			else:
+				print("I was the higher one")
+				# SPAWN NEXT SIZE BUBBLE
+			
+		# CHECK IF BUBBLE IS THE SAME SIZE
+		# CHECK WHICH BUBBLE IS HIGHER IN SCENE TREE. LOWER BUBBLE DIES INSTANTLY
+		# HIGHER BUBBLE SPAWNS BUBBLE OF NEXT SIZE
+
+
 func _on_body_entered(body):
-	if body.is_in_group("Bubble") or body.is_in_group("Environment"):
-		#apply_central_impulse(body.get_normal()*bounceForce)
-		pass
-		
+	#print("HELP")
+	bodyEntered(body)

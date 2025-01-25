@@ -15,7 +15,7 @@ radius = 51.4781
 position = Vector2(960, 540)
 
 [node name="Player" parent="." instance=ExtResource("1_etxjp")]
-position = Vector2(144, 397)
+position = Vector2(351, 459)
 
 [node name="Player2" parent="." instance=ExtResource("1_etxjp")]
 position = Vector2(1713, 565)
@@ -51,22 +51,7 @@ polygon = PackedVector2Array(1917, 0, 0.1, 0, 0, 0.7, 0, 318.5, 3, 320.9, 3, 323
 polygon = PackedVector2Array(1917, 759, 1917, 757, 1690, 758, 1685.3, 758, 1680, 787.8, 1680, 793.5, 1671, 819.7, 1671, 822.5, 1655, 850.5, 1655, 852.2, 1636, 873.2, 1636, 875, 1611, 895, 1611, 895.7, 1583, 909.8, 1583, 910.5, 1551, 919.5, 1551, 920.1, 1522, 922.1, 1522, 922.9, 386, 921, 376.3, 921, 335.3, 909, 333.5, 909, 309.5, 895, 307.7, 895, 282.8, 873, 282, 873, 263, 848, 262.3, 848, 249.3, 821, 248.5, 821, 240.5, 792, 239.7, 792, 235, 760.7, 235, 758, 3, 757, 3, 758, 0.4, 758, 0, 759.7, 0, 1077.5, 3, 1079.9, 1917.6, 1080, 1920, 1077, 1920, 761.4)
 
 [node name="Bubble" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(677, 211)
+position = Vector2(347, 617)
 
 [node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(1291, 211)
-
-[node name="Bubble3" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(663, 819)
-
-[node name="Bubble4" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(1311, 830)
-
-[node name="Bubble5" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(1079, 587)
-
-[node name="Bubble6" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(1017, 443)
-
-[node name="Bubble7" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(926, 593)
+position = Vector2(347, 753)
