@@ -96,6 +96,7 @@ texture = ExtResource("2_fu7cr")
 
 [node name="Confetti" type="GPUParticles2D" parent="."]
 position = Vector2(203, 0)
+emitting = false
 amount = 120
 process_material = SubResource("ParticleProcessMaterial_f0g0o")
 lifetime = 0.75
@@ -103,9 +104,8 @@ explosiveness = 0.95
 
 [node name="PopBubble" type="GPUParticles2D" parent="."]
 position = Vector2(420, 0)
+emitting = false
 amount = 60
 process_material = SubResource("ParticleProcessMaterial_k5bm2")
 lifetime = 0.5
 explosiveness = 1.0
-
-[node name="DenseBubble" type="GPUParticles2D" parent="."]
