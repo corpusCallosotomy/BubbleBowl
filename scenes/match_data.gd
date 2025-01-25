@@ -32,6 +32,7 @@ func addBubble(bubble) -> void:
 	
 #increase the score for a team, based on a size of the incoming bubble
 func Score(team: int,size: int) -> void:
-	scores[0] +=size
+	scores[team] +=size
+	
 func getScore(team: int) -> int:
 		return scores[team]
