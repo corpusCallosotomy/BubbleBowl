@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f44rlkum2mmr"
-path="res://.godot/imported/jeb.png-1cd19e9dfac798ac020d41e77cdaee8e.ctex"
+uid="uid://dfuk1lypcog0h"
+path="res://.godot/imported/goal.png-ea02904c08bdba877c46c957f984e645.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/credit_icons/jeb.png"
-dest_files=["res://.godot/imported/jeb.png-1cd19e9dfac798ac020d41e77cdaee8e.ctex"]
+source_file="res://VFX/goal.png"
+dest_files=["res://.godot/imported/goal.png-ea02904c08bdba877c46c957f984e645.ctex"]
 
 [params]
 

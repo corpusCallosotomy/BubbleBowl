@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
 [ext_resource type="Script" path="res://scripts/score_display.gd" id="6_alnfp"]
+[ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
+[ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
+[ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
+[ext_resource type="Texture2D" uid="uid://qoo2rshqtl53" path="res://VFX/Sand_Texture_V2.png" id="6_jblcl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3glh"]
 radius = 51.4781
@@ -69,6 +73,13 @@ position = Vector2(347, 753)
 script = ExtResource("6_alnfp")
 score1 = NodePath("Score1")
 score2 = NodePath("Score2")
+[node name="FloorSprite" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(969, 548)
+scale = Vector2(0.935, 0.515)
+texture = ExtResource("6_jblcl")
+
+[node name="ScoreDisplay" type="Node" parent="."]
 
 [node name="Score1" type="Label" parent="ScoreDisplay"]
 offset_left = 50.0

@@ -1,18 +1,26 @@
-[gd_scene load_steps=17 format=3 uid="uid://babfvwlmtr3ys"]
+[gd_scene load_steps=21 format=3 uid="uid://babfvwlmtr3ys"]
 
-[ext_resource type="Texture2D" uid="uid://bhwkvnwd7rxj0" path="res://art/credit_icons/george.png" id="1_ti6ek"]
+[ext_resource type="Texture2D" uid="uid://lkgpki1evqsg" path="res://art/UI/Buttons/Back_Button_Hover.png" id="1_1f1f8"]
+[ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_5utts"]
+[ext_resource type="Texture2D" uid="uid://bhwkvnwd7rxj0" path="res://art/UI/credit_icons/george.png" id="1_ti6ek"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_1rnxj"]
-[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/Back_Button.png" id="2_m244x"]
-[ext_resource type="Texture2D" uid="uid://dn1ghbifomcp5" path="res://art/credit_icons/jake.png" id="2_uphsr"]
-[ext_resource type="Texture2D" uid="uid://f44rlkum2mmr" path="res://art/credit_icons/jeb.png" id="3_cipor"]
-[ext_resource type="Texture2D" uid="uid://c3dhluqug7ayg" path="res://art/credit_icons/joel.png" id="4_c8htr"]
-[ext_resource type="Texture2D" uid="uid://dfnlwtkso4tbg" path="res://art/credit_icons/joshua.png" id="5_6rc5r"]
-[ext_resource type="Texture2D" uid="uid://dkde8vkwpkjxf" path="res://art/credit_icons/Kiron.png" id="6_mt0q7"]
-[ext_resource type="Texture2D" uid="uid://bnkq67wc32x3l" path="res://art/credit_icons/max.png" id="7_ko3tf"]
-[ext_resource type="Texture2D" uid="uid://dhjw1arwihtgg" path="res://art/credit_icons/michael.png" id="8_13c0k"]
-[ext_resource type="Texture2D" uid="uid://bng4dhp6dprao" path="res://art/credit_icons/Moonfish.png" id="9_c82tw"]
-[ext_resource type="Texture2D" uid="uid://bmu4yme53cyil" path="res://art/credit_icons/stefan.png" id="10_3g1ry"]
-[ext_resource type="Texture2D" uid="uid://6jk1fh67sg6b" path="res://art/credit_icons/xavier.png" id="11_hvkm1"]
+[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/UI/Buttons/Back_Button.png" id="2_m244x"]
+[ext_resource type="Texture2D" uid="uid://dn1ghbifomcp5" path="res://art/UI/credit_icons/jake.png" id="2_uphsr"]
+[ext_resource type="Texture2D" uid="uid://f44rlkum2mmr" path="res://art/UI/credit_icons/jeb.png" id="3_cipor"]
+[ext_resource type="Texture2D" uid="uid://c3dhluqug7ayg" path="res://art/UI/credit_icons/joel.png" id="4_c8htr"]
+[ext_resource type="Texture2D" uid="uid://dfnlwtkso4tbg" path="res://art/UI/credit_icons/joshua.png" id="5_6rc5r"]
+[ext_resource type="Texture2D" uid="uid://dkde8vkwpkjxf" path="res://art/UI/credit_icons/Kiron.png" id="6_mt0q7"]
+[ext_resource type="Texture2D" uid="uid://bnkq67wc32x3l" path="res://art/UI/credit_icons/max.png" id="7_ko3tf"]
+[ext_resource type="Texture2D" uid="uid://dhjw1arwihtgg" path="res://art/UI/credit_icons/michael.png" id="8_13c0k"]
+[ext_resource type="Texture2D" uid="uid://bng4dhp6dprao" path="res://art/UI/credit_icons/Moonfish.png" id="9_c82tw"]
+[ext_resource type="Texture2D" uid="uid://bmu4yme53cyil" path="res://art/UI/credit_icons/stefan.png" id="10_3g1ry"]
+[ext_resource type="Texture2D" uid="uid://6jk1fh67sg6b" path="res://art/UI/credit_icons/xavier.png" id="11_hvkm1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fif3c"]
+texture = ExtResource("1_1f1f8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bq7sc"]
+texture = ExtResource("2_m244x")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_783xf"]
 bg_color = Color(0.556863, 0.580392, 0.8, 0.270588)
@@ -75,6 +83,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 2.51
+theme_override_fonts/normal_font = ExtResource("1_5utts")
 theme_override_font_sizes/normal_font_size = 106
 bbcode_enabled = true
 text = "[center]Credits[/center]"
@@ -88,15 +97,16 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -176.235
-offset_top = 9.145
-offset_right = -8.23499
-offset_bottom = 141.145
+offset_left = -176.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = 162.0
 grow_horizontal = 0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 90
-icon = ExtResource("2_m244x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fif3c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bq7sc")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_1rnxj")

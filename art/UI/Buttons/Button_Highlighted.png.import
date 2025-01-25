@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bng4dhp6dprao"
-path="res://.godot/imported/Moonfish.png-6847b18bf1ecf753b310a4485a6e2acf.ctex"
+uid="uid://b6mmuy17p4u77"
+path="res://.godot/imported/Button_Highlighted.png-587fb009390c1d1eb0078d79b613a040.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/credit_icons/Moonfish.png"
-dest_files=["res://.godot/imported/Moonfish.png-6847b18bf1ecf753b310a4485a6e2acf.ctex"]
+source_file="res://art/UI/Buttons/Button_Highlighted.png"
+dest_files=["res://.godot/imported/Button_Highlighted.png-587fb009390c1d1eb0078d79b613a040.ctex"]
 
 [params]
 
