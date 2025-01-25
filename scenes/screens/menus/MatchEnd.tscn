@@ -146,6 +146,7 @@ text = "0000"
 horizontal_alignment = 2
 
 [node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/ButtonMenu"]
+layout_mode = 0
 offset_right = 250.0
 offset_bottom = 276.0
 

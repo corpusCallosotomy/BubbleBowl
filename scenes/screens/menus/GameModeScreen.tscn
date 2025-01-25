@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://baja085pndt5f"]
+[gd_scene load_steps=5 format=3 uid="uid://baja085pndt5f"]
 
 [ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_ycf7h"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_gv7wd"]
+[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/Back_Button.png" id="2_tvifm"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/settings/sliderLabel.gd" id="4_sbjtm"]
 
 [node name="GameModeScreen" type="Control"]
@@ -61,8 +62,7 @@ grow_horizontal = 0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 90
-text = "Back"
-icon = ExtResource("1_ycf7h")
+icon = ExtResource("2_tvifm")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_gv7wd")

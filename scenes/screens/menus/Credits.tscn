@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://babfvwlmtr3ys"]
 
-[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_6oi0d"]
 [ext_resource type="Texture2D" uid="uid://bhwkvnwd7rxj0" path="res://art/credit_icons/george.png" id="1_ti6ek"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_1rnxj"]
+[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/Back_Button.png" id="2_m244x"]
 [ext_resource type="Texture2D" uid="uid://dn1ghbifomcp5" path="res://art/credit_icons/jake.png" id="2_uphsr"]
 [ext_resource type="Texture2D" uid="uid://f44rlkum2mmr" path="res://art/credit_icons/jeb.png" id="3_cipor"]
 [ext_resource type="Texture2D" uid="uid://c3dhluqug7ayg" path="res://art/credit_icons/joel.png" id="4_c8htr"]
@@ -96,8 +96,7 @@ grow_horizontal = 0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 90
-text = "Back"
-icon = ExtResource("1_6oi0d")
+icon = ExtResource("2_m244x")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_1rnxj")

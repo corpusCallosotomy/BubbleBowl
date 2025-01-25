@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://caxrx5kkdirjr"]
 
-[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_dojk4"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_70uss"]
+[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/Back_Button.png" id="2_gjmad"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/settings/muteToggle.gd" id="2_sk5rp"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/settings/volume_slider.gd" id="3_v5bpy"]
 
@@ -62,8 +62,7 @@ grow_horizontal = 0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 90
-text = "Back"
-icon = ExtResource("1_dojk4")
+icon = ExtResource("2_gjmad")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_70uss")
