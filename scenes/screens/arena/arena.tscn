@@ -1,10 +1,9 @@
-<<<<<<< Updated upstream
+
 [gd_scene load_steps=11 format=3 uid="uid://pbnhy6mm8f56"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
 [ext_resource type="PackedScene" uid="uid://ckhissng2jj1m" path="res://scenes/bubbles/Bubble.tscn" id="2_rqac2"]
 [ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
-=======
 [gd_scene load_steps=13 format=3 uid="uid://pbnhy6mm8f56"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
@@ -92,7 +91,6 @@ position = Vector2(347, 617)
 [node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
 position = Vector2(347, 753)
 
-<<<<<<< Updated upstream
 
 
 [node name="ScoreDisplay" type="Node" parent="." node_paths=PackedStringArray("score1", "score2")]
@@ -100,8 +98,7 @@ script = ExtResource("6_alnfp")
 score1 = NodePath("Score1")
 score2 = NodePath("Score2")
 
-=======
->>>>>>> Stashed changes
+
 [node name="FloorSprite" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(969, 548)
