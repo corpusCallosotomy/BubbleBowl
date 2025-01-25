@@ -1,11 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvhb2tr6dpgo2"]
+[gd_scene load_steps=11 format=3 uid="uid://bvhb2tr6dpgo2"]
 
 [ext_resource type="Shader" path="res://VFX/VFX_Scene_Test.gdshader" id="1_qifkf"]
 [ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="2_fu7cr"]
 
+[sub_resource type="Curve" id="Curve_peg8l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.246667, 0.505494), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3xmf"]
+curve = SubResource("Curve_peg8l")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f0g0o"]
+lifetime_randomness = 0.4
 particle_flag_disable_z = true
+emission_shape_scale = Vector3(35, 35, 1)
+emission_shape = 2
+emission_sphere_radius = 1.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
 gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_l3xmf")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ibu0k"]
 noise_type = 2
@@ -37,11 +57,16 @@ shader_parameter/noise2 = SubResource("NoiseTexture2D_e412v")
 
 [node name="VfxSceneTest" type="Node2D"]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 20
+[node name="PopPart" type="GPUParticles2D" parent="."]
+position = Vector2(203, 0)
+amount = 60
 process_material = SubResource("ParticleProcessMaterial_f0g0o")
-lifetime = 61.91
+lifetime = 0.5
+explosiveness = 0.95
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_lns0o")
 texture = ExtResource("2_fu7cr")
+
+[node name="SpawnBubble" type="GPUParticles2D" parent="."]
+position = Vector2(420, 0)
