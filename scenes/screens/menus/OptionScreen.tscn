@@ -1,0 +1,246 @@
+[gd_scene load_steps=6 format=3 uid="uid://caxrx5kkdirjr"]
+
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_dojk4"]
+[ext_resource type="Script" path="res://scripts/sceneSwitchButton.gd" id="2_70uss"]
+[ext_resource type="Script" path="res://scripts/settings/muteToggle.gd" id="2_sk5rp"]
+[ext_resource type="Script" path="res://scripts/settings/volume_slider.gd" id="3_v5bpy"]
+[ext_resource type="AudioStream" uid="uid://des07dm5tck3l" path="res://audio/music/MUSIC_mainmenu.wav" id="4_2vn4r"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Title" type="Panel" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 236.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Title"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 2.51
+theme_override_font_sizes/normal_font_size = 106
+bbcode_enabled = true
+text = "[center]Options Menu[/center]"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/Title"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.235
+offset_top = 9.145
+offset_right = -8.23499
+offset_bottom = 141.145
+grow_horizontal = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 90
+text = "Back"
+icon = ExtResource("1_dojk4")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_70uss")
+nextScene = "res://scenes/screens/menus/TitleScreen.tscn"
+
+[node name="ButtonMenu" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -290.5
+offset_top = -580.0
+offset_right = 290.5
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ButtonMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 42.85
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MuteToggle" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/ButtonMenu/VBoxContainer/MuteToggle"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 110.24
+offset_top = -19.74
+offset_right = 154.24
+offset_bottom = 4.26
+grow_vertical = 2
+scale = Vector2(1.925, 1.925)
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_sk5rp")
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/MuteToggle"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Mute"
+
+[node name="Main Slider" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/ButtonMenu/VBoxContainer/Main Slider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -395.0
+offset_top = -7.5
+offset_right = 2.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+value = 50.0
+script = ExtResource("3_v5bpy")
+bus_name = "Master"
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Main Slider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Volume"
+
+[node name="Music Slider" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/ButtonMenu/VBoxContainer/Music Slider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -7.5
+offset_right = 2.0
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 50.0
+script = ExtResource("3_v5bpy")
+bus_name = "Music"
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Music Slider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Music"
+
+[node name="SFX Slider" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/ButtonMenu/VBoxContainer/SFX Slider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -7.5
+offset_right = 2.0
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 50.0
+script = ExtResource("3_v5bpy")
+bus_name = "SFX"
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/SFX Slider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "SFX"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2vn4r")
+volume_db = -50.0
+autoplay = true
+bus = &"Music"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/Title/ExitButton" to="CanvasLayer/Title/ExitButton" method="_on_pressed"]
+[connection signal="toggled" from="CanvasLayer/ButtonMenu/VBoxContainer/MuteToggle/CheckButton" to="CanvasLayer/ButtonMenu/VBoxContainer/MuteToggle/CheckButton" method="_on_toggled"]
