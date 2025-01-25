@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://pbnhy6mm8f56"]
+[gd_scene load_steps=7 format=3 uid="uid://pbnhy6mm8f56"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
 [ext_resource type="PackedScene" uid="uid://ckhissng2jj1m" path="res://scenes/bubbles/Bubble.tscn" id="2_rqac2"]
+[ext_resource type="PackedScene" uid="uid://b3fh5sgpguw6g" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
+[ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
+[ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3glh"]
+radius = 51.4781
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,5 +21,52 @@ position = Vector2(144, 397)
 position = Vector2(1713, 565)
 isPlayer1 = false
 
+[node name="Goal" parent="." instance=ExtResource("2_v7y4l")]
+position = Vector2(71, 540)
+
+[node name="Goal2" parent="." instance=ExtResource("2_v7y4l")]
+position = Vector2(1849, 540)
+isPlayer1Goal = false
+
+[node name="BubbleSpawner" type="Area2D" parent="."]
+position = Vector2(1010, 492)
+monitorable = false
+script = ExtResource("5_k3v74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleSpawner"]
+shape = SubResource("CircleShape2D_w3glh")
+
+[node name="Fieldmap" type="Sprite2D" parent="."]
+texture = ExtResource("3_khlq0")
+centered = false
+
+[node name="fieldceiling" type="StaticBody2D" parent="." groups=["Environment"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fieldceiling"]
+polygon = PackedVector2Array(1917, 0, 0.1, 0, 0, 0.7, 0, 318.5, 3, 320.9, 3, 323, 230, 322, 234.7, 322, 240, 292.2, 240, 286.4, 249, 260.3, 249, 257.4, 265, 229.5, 265, 227.7, 284, 206.8, 284, 204.9, 311, 184, 311, 183.2, 337, 170.2, 337, 169.4, 369, 160.5, 369, 159.8, 399, 157.9, 399, 157, 1534, 159, 1543.7, 159, 1584.7, 171, 1586.5, 171, 1611.4, 186, 1613.3, 186, 1636.3, 206, 1637, 206, 1655, 229, 1655.8, 229, 1670.8, 259, 1671.5, 259, 1679.5, 288, 1680.2, 288, 1682, 303.2, 1682, 313.5, 1685, 319.5, 1685, 321.4, 1689.7, 323, 1916, 323, 1920, 318, 1920, 2.4)
+
+[node name="fieldfloor" type="StaticBody2D" parent="." groups=["Environment"]]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="fieldfloor"]
+polygon = PackedVector2Array(1917, 759, 1917, 757, 1690, 758, 1685.3, 758, 1680, 787.8, 1680, 793.5, 1671, 819.7, 1671, 822.5, 1655, 850.5, 1655, 852.2, 1636, 873.2, 1636, 875, 1611, 895, 1611, 895.7, 1583, 909.8, 1583, 910.5, 1551, 919.5, 1551, 920.1, 1522, 922.1, 1522, 922.9, 386, 921, 376.3, 921, 335.3, 909, 333.5, 909, 309.5, 895, 307.7, 895, 282.8, 873, 282, 873, 263, 848, 262.3, 848, 249.3, 821, 248.5, 821, 240.5, 792, 239.7, 792, 235, 760.7, 235, 758, 3, 757, 3, 758, 0.4, 758, 0, 759.7, 0, 1077.5, 3, 1079.9, 1917.6, 1080, 1920, 1077, 1920, 761.4)
+
 [node name="Bubble" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(845, 512)
+position = Vector2(677, 211)
+
+[node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
+position = Vector2(1291, 211)
+
+[node name="Bubble3" parent="." instance=ExtResource("2_rqac2")]
+position = Vector2(663, 819)
+
+[node name="Bubble4" parent="." instance=ExtResource("2_rqac2")]
+position = Vector2(1311, 830)
+
+[node name="Bubble5" parent="." instance=ExtResource("2_rqac2")]
+position = Vector2(1079, 587)
+
+[node name="Bubble6" parent="." instance=ExtResource("2_rqac2")]
+position = Vector2(1017, 443)
+
+[node name="Bubble7" parent="." instance=ExtResource("2_rqac2")]
+position = Vector2(926, 593)
