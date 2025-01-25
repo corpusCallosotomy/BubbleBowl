@@ -1,0 +1,192 @@
+[gd_scene load_steps=3 format=3 uid="uid://cran8bdnnr1va"]
+
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_e63tm"]
+[ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_qywtj"]
+
+[node name="MatchEnd" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Title" type="Panel" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 236.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Title"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 2.51
+theme_override_font_sizes/normal_font_size = 106
+bbcode_enabled = true
+text = "[center]Match End[/center]"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="ButtonMenu" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -516.0
+offset_top = -790.0
+offset_right = 515.0
+offset_bottom = -266.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ButtonMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 42.85
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Score" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScoreTextLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -24.5
+offset_right = 331.0
+offset_bottom = 25.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Score: "
+
+[node name="ScoreNumLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -37.5
+offset_right = -33.0
+offset_bottom = 39.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "0000"
+horizontal_alignment = 2
+
+[node name="Time" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TimeTextLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Time"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -24.5
+offset_right = 331.0
+offset_bottom = 25.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Time: "
+
+[node name="TimeNumLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Time"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -37.5
+offset_right = -33.0
+offset_bottom = 39.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "0000"
+horizontal_alignment = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/ButtonMenu"]
+offset_right = 250.0
+offset_bottom = 276.0
+
+[node name="NavButtons" type="Panel" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -225.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/NavButtons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/NavButtons/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 90
+text = "REPLAY!"
+icon = ExtResource("1_e63tm")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_qywtj")
+nextScene = "res://scenes/screens/arena/arena.tscn"
+
+[node name="PlayButton2" type="Button" parent="CanvasLayer/NavButtons/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 90
+text = "Menu"
+icon = ExtResource("1_e63tm")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_qywtj")
+nextScene = "res://scenes/screens/menus/TitleScreen.tscn"
+
+[connection signal="pressed" from="CanvasLayer/NavButtons/HSplitContainer/PlayButton" to="CanvasLayer/NavButtons/HSplitContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/NavButtons/HSplitContainer/PlayButton2" to="CanvasLayer/NavButtons/HSplitContainer/PlayButton2" method="_on_pressed"]
