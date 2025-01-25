@@ -1,0 +1,667 @@
+[gd_scene load_steps=17 format=3 uid="uid://babfvwlmtr3ys"]
+
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_6oi0d"]
+[ext_resource type="Texture2D" uid="uid://bhwkvnwd7rxj0" path="res://art/credit_icons/george.png" id="1_ti6ek"]
+[ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_1rnxj"]
+[ext_resource type="Texture2D" uid="uid://dn1ghbifomcp5" path="res://art/credit_icons/jake.png" id="2_uphsr"]
+[ext_resource type="Texture2D" uid="uid://f44rlkum2mmr" path="res://art/credit_icons/jeb.png" id="3_cipor"]
+[ext_resource type="Texture2D" uid="uid://c3dhluqug7ayg" path="res://art/credit_icons/joel.png" id="4_c8htr"]
+[ext_resource type="Texture2D" uid="uid://dfnlwtkso4tbg" path="res://art/credit_icons/joshua.png" id="5_6rc5r"]
+[ext_resource type="Texture2D" uid="uid://dkde8vkwpkjxf" path="res://art/credit_icons/Kiron.png" id="6_mt0q7"]
+[ext_resource type="Texture2D" uid="uid://bnkq67wc32x3l" path="res://art/credit_icons/max.png" id="7_ko3tf"]
+[ext_resource type="Texture2D" uid="uid://dhjw1arwihtgg" path="res://art/credit_icons/michael.png" id="8_13c0k"]
+[ext_resource type="Texture2D" uid="uid://bng4dhp6dprao" path="res://art/credit_icons/Moonfish.png" id="9_c82tw"]
+[ext_resource type="Texture2D" uid="uid://bmu4yme53cyil" path="res://art/credit_icons/stefan.png" id="10_3g1ry"]
+[ext_resource type="Texture2D" uid="uid://6jk1fh67sg6b" path="res://art/credit_icons/xavier.png" id="11_hvkm1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_783xf"]
+bg_color = Color(0.556863, 0.580392, 0.8, 0.270588)
+border_width_left = 35
+border_width_top = 45
+border_width_right = 30
+border_width_bottom = 50
+border_color = Color(0.528448, 0.0934121, 0.693081, 1)
+border_blend = true
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+corner_detail = 20
+anti_aliasing_size = 0.865
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn8ey"]
+bg_color = Color(0.471459, 0.456894, 0.661707, 0.411765)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_jpr2e"]
+font_size = 50
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Title" type="Panel" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 236.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Title"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 2.51
+theme_override_font_sizes/normal_font_size = 106
+bbcode_enabled = true
+text = "[center]Credits[/center]"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/Title"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.235
+offset_top = 9.145
+offset_right = -8.23499
+offset_bottom = 141.145
+grow_horizontal = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 90
+text = "Back"
+icon = ExtResource("1_6oi0d")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_1rnxj")
+nextScene = "res://scenes/screens/menus/TitleScreen.tscn"
+
+[node name="ButtonMenu" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 228.0
+offset_right = -44.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_783xf")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ButtonMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 64.0
+offset_right = -54.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="George" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/George"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -83.5
+offset_right = 419.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "George"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/George"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -17.5
+offset_right = 419.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Programmer"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/George"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("1_ti6ek")
+
+[node name="Jake" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Jake"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = -83.5
+offset_right = 423.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Jake"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Jake"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = -17.5
+offset_right = 423.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Audio Dev"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Jake"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("2_uphsr")
+
+[node name="Jeb" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Jeb"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -83.5
+offset_right = 424.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Jeb"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Jeb"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = -17.5
+offset_right = 423.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Artist"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Jeb"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("3_cipor")
+
+[node name="Joel" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Joel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 213.0
+offset_top = -83.5
+offset_right = 422.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Joel"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Joel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -17.5
+offset_right = 431.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Programmer"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Joel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("4_c8htr")
+
+[node name="Joshua" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Joshua"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -83.5
+offset_right = 424.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Joshua"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Joshua"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -17.5
+offset_right = 424.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Producer"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Joshua"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("5_6rc5r")
+
+[node name="Kiron" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Kiron"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -83.5
+offset_right = 419.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Kiron"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Kiron"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -17.5
+offset_right = 424.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Artist"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Kiron"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("6_mt0q7")
+
+[node name="Max" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Max"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 208.0
+offset_top = -83.5
+offset_right = 417.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Max"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Max"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = -12.0
+offset_right = 435.0
+offset_bottom = 40.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Lead
+"
+vertical_alignment = 1
+
+[node name="Role2" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Max"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = 12.0
+offset_right = 435.0
+offset_bottom = 87.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Programmer"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Max"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("7_ko3tf")
+
+[node name="Michael" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Michael"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 212.0
+offset_top = -83.5
+offset_right = 421.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Michael"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Michael"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -17.5
+offset_right = 436.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "VFX Artist"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Michael"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("8_13c0k")
+
+[node name="Moonfish" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Moonfish"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -83.5
+offset_right = 460.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Moonfish"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Moonfish"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 216.0
+offset_top = -17.5
+offset_right = 425.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Audio Dev"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Moonfish"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("9_c82tw")
+
+[node name="Stefan" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Stefan"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -83.5
+offset_right = 419.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Stefan"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Stefan"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 219.0
+offset_top = -17.5
+offset_right = 428.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Artist"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Stefan"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("10_3g1ry")
+
+[node name="Xavier" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8ey")
+
+[node name="Name" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Xavier"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 216.0
+offset_top = -83.5
+offset_right = 425.0
+offset_bottom = 1.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Xavier"
+label_settings = SubResource("LabelSettings_jpr2e")
+vertical_alignment = 1
+
+[node name="Role" type="Label" parent="CanvasLayer/ButtonMenu/GridContainer/Xavier"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 216.0
+offset_top = -17.5
+offset_right = 437.0
+offset_bottom = 55.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Programmer"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ButtonMenu/GridContainer/Xavier"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -83.5
+offset_right = 204.0
+offset_bottom = 83.5
+grow_vertical = 2
+texture = ExtResource("11_hvkm1")
+
+[connection signal="pressed" from="CanvasLayer/Title/ExitButton" to="CanvasLayer/Title/ExitButton" method="_on_pressed"]

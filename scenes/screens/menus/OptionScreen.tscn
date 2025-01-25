@@ -49,7 +49,7 @@ scroll_active = false
 shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/Title" node_paths=PackedStringArray("sfxSound")]
+[node name="ExitButton" type="Button" parent="CanvasLayer/Title"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -68,7 +68,6 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_70uss")
 nextScene = "res://scenes/screens/menus/TitleScreen.tscn"
-sfxSound = NodePath("")
 
 [node name="ButtonMenu" type="Panel" parent="CanvasLayer"]
 anchors_preset = 7

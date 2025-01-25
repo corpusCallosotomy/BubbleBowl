@@ -47,9 +47,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -290.5
-offset_top = -580.0
-offset_right = 290.5
+offset_left = -290.0
+offset_top = -650.0
+offset_right = 291.0
 offset_bottom = -80.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -97,6 +97,19 @@ expand_icon = true
 script = ExtResource("2_32q7n")
 nextScene = "res://scenes/screens/menus/OptionScreen.tscn"
 
+[node name="PlayButton2" type="Button" parent="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 90
+text = "Credits"
+icon = ExtResource("1_8brmv")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_32q7n")
+nextScene = "res://scenes/screens/menus/Credits.tscn"
+
 [node name="ExitButton" type="Button" parent="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -110,4 +123,5 @@ script = ExtResource("3_kn0er")
 
 [connection signal="pressed" from="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/PlayButton" to="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/OptionsButton" to="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/OptionsButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/PlayButton2" to="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/PlayButton2" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/ExitButton" to="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/ExitButton" method="_on_pressed"]
