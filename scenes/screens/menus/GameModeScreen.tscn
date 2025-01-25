@@ -1,0 +1,269 @@
+[gd_scene load_steps=4 format=3 uid="uid://baja085pndt5f"]
+
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_ycf7h"]
+[ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_gv7wd"]
+[ext_resource type="Script" path="res://scripts/menu_scripts/settings/sliderLabel.gd" id="4_sbjtm"]
+
+[node name="GameModeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Title" type="Panel" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 236.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Title"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 2.51
+theme_override_font_sizes/normal_font_size = 106
+bbcode_enabled = true
+text = "[center]Match Settings[/center]"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/Title" node_paths=PackedStringArray("sfxSound")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.235
+offset_top = 9.145
+offset_right = -8.23499
+offset_bottom = 141.145
+grow_horizontal = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 90
+text = "Back"
+icon = ExtResource("1_ycf7h")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_gv7wd")
+nextScene = "res://scenes/screens/menus/TitleScreen.tscn"
+sfxSound = NodePath("")
+
+[node name="ButtonMenu" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -516.0
+offset_top = -790.0
+offset_right = 515.0
+offset_bottom = -266.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ButtonMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 42.85
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="SpikeBubbles" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -239.0
+offset_top = -33.5
+offset_right = -195.0
+offset_bottom = -9.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -24.5
+offset_right = 331.0
+offset_bottom = 25.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Spiked Bubbles"
+
+[node name="Bubble Spawn Speed" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -24.5
+offset_right = 331.0
+offset_bottom = 25.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Spawn Speed"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed" node_paths=PackedStringArray("sliderText")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -482.0
+offset_top = -7.5
+offset_right = -294.0
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 10.0
+script = ExtResource("4_sbjtm")
+sliderText = NodePath("Count")
+
+[node name="Count" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -15.0
+offset_right = 43.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Max Bubbles" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Max Bubbles"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -24.5
+offset_right = 331.0
+offset_bottom = 25.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Max Bubbles"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/ButtonMenu/VBoxContainer/Max Bubbles" node_paths=PackedStringArray("sliderText")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -482.0
+offset_top = -7.5
+offset_right = -294.0
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 10.0
+script = ExtResource("4_sbjtm")
+sliderText = NodePath("Count")
+
+[node name="Count" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Max Bubbles/HSlider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -15.0
+offset_right = 43.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="CanvasLayer" node_paths=PackedStringArray("sfxSound")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -212.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 90
+text = "PLAY!"
+icon = ExtResource("1_ycf7h")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_gv7wd")
+nextScene = "res://scenes/screens/arena/arena.tscn"
+sfxSound = NodePath("")
+
+[connection signal="pressed" from="CanvasLayer/Title/ExitButton" to="CanvasLayer/Title/ExitButton" method="_on_pressed"]
+[connection signal="toggled" from="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/CheckButton" to="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/CheckButton" method="_on_toggled"]
+[connection signal="drag_started" from="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" method="_on_drag_started"]
+[connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider/Count" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Max Bubbles/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Max Bubbles/HSlider" method="_on_value_changed"]
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="CanvasLayer/PlayButton" method="_on_pressed"]
