@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://pbnhy6mm8f56"]
+[gd_scene load_steps=11 format=3 uid="uid://pbnhy6mm8f56"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
 [ext_resource type="PackedScene" uid="uid://ckhissng2jj1m" path="res://scenes/bubbles/Bubble.tscn" id="2_rqac2"]
-[ext_resource type="PackedScene" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
+[ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
 [ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
 [ext_resource type="Texture2D" uid="uid://qoo2rshqtl53" path="res://VFX/Sand_Texture_V2.png" id="6_jblcl"]
@@ -65,7 +65,6 @@ position = Vector2(347, 617)
 [node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
 position = Vector2(347, 753)
 
-
 [node name="FloorSprite" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(969, 548)
@@ -96,4 +95,3 @@ theme = SubResource("Theme_jgdss")
 text = "00000"
 label_settings = SubResource("LabelSettings_h56k3")
 horizontal_alignment = 2
-
