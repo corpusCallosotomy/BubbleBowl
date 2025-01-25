@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
 [ext_resource type="PackedScene" uid="uid://ckhissng2jj1m" path="res://scenes/bubbles/Bubble.tscn" id="2_rqac2"]
-[ext_resource type="PackedScene" uid="uid://b3fh5sgpguw6g" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
+[ext_resource type="PackedScene" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
 [ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
 
