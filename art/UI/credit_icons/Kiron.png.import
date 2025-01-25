@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhwkvnwd7rxj0"
-path="res://.godot/imported/george.png-22deb1b8b4cee9a38b1c65c7fc02cf80.ctex"
+uid="uid://dkde8vkwpkjxf"
+path="res://.godot/imported/Kiron.png-1f4ec073f1b1e0a8aa61a14af5362ded.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/credit_icons/george.png"
-dest_files=["res://.godot/imported/george.png-22deb1b8b4cee9a38b1c65c7fc02cf80.ctex"]
+source_file="res://art/UI/credit_icons/Kiron.png"
+dest_files=["res://.godot/imported/Kiron.png-1f4ec073f1b1e0a8aa61a14af5362ded.ctex"]
 
 [params]
 
