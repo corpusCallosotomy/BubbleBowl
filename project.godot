@@ -11,15 +11,20 @@ config_version=5
 [application]
 
 config/name="BubbleBowl"
+
 run/main_scene="res://scenes/screens/menus/TitleScreen.tscn"
+
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+
 AudioPlayer="*res://audio/audioPlayer.tscn"
 AudioListener="*res://audio/audioListener.tscn"
 World="*res://scenes/World.tscn"
+MatchData="*res://scenes/matchData.tscn"
+
 
 [display]
 
