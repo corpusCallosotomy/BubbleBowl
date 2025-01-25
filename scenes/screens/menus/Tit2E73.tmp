@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://cblvjtwmofbld"]
+
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_8brmv"]
+[ext_resource type="Script" path="res://scripts/sceneSwitchButton.gd" id="2_32q7n"]
+[ext_resource type="Script" path="res://scripts/quitApplication.gd" id="3_kn0er"]
+[ext_resource type="AudioStream" uid="uid://des07dm5tck3l" path="res://audio/music/MUSIC_mainmenu.wav" id="3_vvp0p"]
+[ext_resource type="AudioStream" uid="uid://dwtteyw2sn21a" path="res://audio/sfx/ui/UI_Select.wav" id="5_75a5p"]
+[ext_resource type="AudioStream" uid="uid://ck3tmtiv0en3a" path="res://audio/sfx/ui/UI_Pluck.wav" id="6_dlbmg"]
+[ext_resource type="AudioStream" uid="uid://cqcggpa65eki6" path="res://audio/sfx/ui/UI_bop.wav" id="7_tt5b2"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Title" type="Panel" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 392.0
+grow_horizontal = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Title/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_8brmv")
+
+[node name="ButtonMenu" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -290.5
+offset_top = -580.0
+offset_right = 290.5
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/ButtonMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.713
+offset_right = 130.713
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ButtonMenu/CenterContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 42.85
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer" node_paths=PackedStringArray("sfxSound")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 90
+text = "Play"
+icon = ExtResource("1_8brmv")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_32q7n")
+nextScene = "res://scenes/screens/menus/GameModeScreen.tscn"
+sfxSound = NodePath("../../../../../Audio/SFXManager/SceneChange")
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer" node_paths=PackedStringArray("sfxSound")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 90
+text = "Options"
+icon = ExtResource("1_8brmv")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_32q7n")
+nextScene = "res://scenes/screens/menus/OptionScreen.tscn"
+sfxSound = NodePath("../../../../../Audio/SFXManager/SceneChange")
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 90
+text = "Exit"
+icon = ExtResource("1_8brmv")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_kn0er")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Audio"]
+current = true
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("3_vvp0p")
+volume_db = -50.0
+autoplay = true
+bus = &"Music"
+
+[node name="SFXManager" type="Node" parent="Audio"]
+
+[node name="SceneChange" type="AudioStreamPlayer" parent="Audio/SFXManager"]
+stream = ExtResource("5_75a5p")
+
+[node name="Select" type="AudioStreamPlayer" parent="Audio/SFXManager"]
+stream = ExtResource("6_dlbmg")
+
+[node name="Click" type="AudioStreamPlayer" parent="Audio/SFXManager"]
+stream = ExtResource("7_tt5b2")
+
+[connection signal="pressed" from="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/PlayButton" to="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/OptionsButton" to="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/OptionsButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/ExitButton" to="CanvasLayer/ButtonMenu/CenterContainer/VBoxContainer/ExitButton" method="_on_pressed"]

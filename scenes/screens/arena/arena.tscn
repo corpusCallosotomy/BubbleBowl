@@ -1,14 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://pbnhy6mm8f56"]
+[gd_scene load_steps=10 format=3 uid="uid://pbnhy6mm8f56"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
 [ext_resource type="PackedScene" uid="uid://ckhissng2jj1m" path="res://scenes/bubbles/Bubble.tscn" id="2_rqac2"]
-[ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
+[ext_resource type="PackedScene" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
 [ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
 [ext_resource type="Texture2D" uid="uid://qoo2rshqtl53" path="res://VFX/Sand_Texture_V2.png" id="6_jblcl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3glh"]
 radius = 51.4781
+
+[sub_resource type="FontVariation" id="FontVariation_o0ld8"]
+
+[sub_resource type="Theme" id="Theme_jgdss"]
+/fonts/Font = SubResource("FontVariation_o0ld8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_h56k3"]
+font_size = 72
 
 [node name="Node2D" type="Node2D"]
 
@@ -57,8 +65,35 @@ position = Vector2(347, 617)
 [node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
 position = Vector2(347, 753)
 
+
 [node name="FloorSprite" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(969, 548)
 scale = Vector2(0.935, 0.515)
 texture = ExtResource("6_jblcl")
+
+[node name="ScoreDisplay" type="Node" parent="."]
+
+[node name="Score1" type="Label" parent="ScoreDisplay"]
+offset_left = 50.0
+offset_top = 25.0
+offset_right = 550.0
+offset_bottom = 125.0
+theme = SubResource("Theme_jgdss")
+text = "00000"
+label_settings = SubResource("LabelSettings_h56k3")
+
+[node name="Score2" type="Label" parent="ScoreDisplay"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -550.0
+offset_top = 25.0
+offset_right = -50.0
+offset_bottom = 125.0
+grow_horizontal = 0
+theme = SubResource("Theme_jgdss")
+text = "00000"
+label_settings = SubResource("LabelSettings_h56k3")
+horizontal_alignment = 2
+

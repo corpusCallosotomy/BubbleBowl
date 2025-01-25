@@ -19,6 +19,6 @@ func _on_body_entered(body):
 		body.queue_free()
 		var scoreToAdd = body.bubbleValue
 		if isPlayer1Goal:
-			MatchData.score_p1+=scoreToAdd
+			MatchData.Score(0,scoreToAdd)
 		else:
-			MatchData.score_p2+=scoreToAdd
+			MatchData.Score(1,scoreToAdd)

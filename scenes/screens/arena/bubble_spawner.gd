@@ -19,6 +19,7 @@ func spawnBubble():
 	add_sibling.call_deferred(bubbleInstance)
 	bubbleInstance.position=self.position
 	#print(bubbleInstance.global_position)
+	MatchData.addBubble( bubbleInstance)
 	bubbleCount+=1
 	
 func tryPosition():
