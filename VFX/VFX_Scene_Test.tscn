@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvhb2tr6dpgo2"]
+
+[ext_resource type="Shader" path="res://VFX/VFX_Scene_Test.gdshader" id="1_qifkf"]
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="2_fu7cr"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f0g0o"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ibu0k"]
+noise_type = 2
+seed = 1
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_16rmy"]
+seamless = true
+noise = SubResource("FastNoiseLite_ibu0k")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p4aga"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e412v"]
+seamless = true
+noise = SubResource("FastNoiseLite_p4aga")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lns0o"]
+shader = ExtResource("1_qifkf")
+shader_parameter/scroll1 = Vector2(0.01, 0.01)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strength = 0.2
+shader_parameter/tone_color = Color(0, 0.4, 1, 1)
+shader_parameter/top_color = Color(0, 1, 1, 1)
+shader_parameter/light_start = 0.0
+shader_parameter/light_end = 0.625
+shader_parameter/noise1 = SubResource("NoiseTexture2D_16rmy")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_e412v")
+
+[node name="VfxSceneTest" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_f0g0o")
+lifetime = 61.91
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lns0o")
+texture = ExtResource("2_fu7cr")
