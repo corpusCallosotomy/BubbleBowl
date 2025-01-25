@@ -2,6 +2,8 @@ extends Node
 
 
 
+var stage = null #what stage we're on. 
+
 var scores  = [] # holds the scores for each team.
 var players =[] # holds objects that represent players
 var bubbles =[] # holds objects for all bubbles on screen
