@@ -132,6 +132,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_r05ci")
+scoreIndex = 1
 
 [node name="ScoreTextLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score2"]
 layout_mode = 1

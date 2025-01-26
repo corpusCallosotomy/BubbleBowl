@@ -40,3 +40,6 @@ func Score(team: int,size: int) -> void:
 func getScore(team: int) -> int:
 		print(scores[team])
 		return scores[team]
+		
+func resetScores() -> void:
+		scores = [0,0]
