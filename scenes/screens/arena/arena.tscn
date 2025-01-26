@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://pbnhy6mm8f56"]
+[gd_scene load_steps=20 format=3 uid="uid://pbnhy6mm8f56"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
+[ext_resource type="Script" path="res://scenes/screens/arena/pauselistener.gd" id="1_je26g"]
 [ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
 [ext_resource type="Texture2D" uid="uid://ca4ll8jd3evah" path="res://scenes/screens/arena/quickbg.png" id="4_cehqr"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
@@ -52,6 +53,8 @@ shader_parameter/noise1 = SubResource("NoiseTexture2D_i8pnp")
 shader_parameter/noise2 = SubResource("NoiseTexture2D_ln7e8")
 
 [node name="Node2D" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_je26g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
