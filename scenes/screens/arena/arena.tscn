@@ -33,14 +33,14 @@ noise_type = 2
 seed = 1
 frequency = 0.04
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_16rmy"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i8pnp"]
 seamless = true
 noise = SubResource("FastNoiseLite_qnldv")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_histy"]
 noise_type = 2
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e412v"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ln7e8"]
 seamless = true
 noise = SubResource("FastNoiseLite_histy")
 
@@ -53,8 +53,8 @@ shader_parameter/tone_color = Color(0, 0.4, 1, 1)
 shader_parameter/top_color = Color(0, 1, 1, 1)
 shader_parameter/light_start = 0.1
 shader_parameter/light_end = 1.0
-shader_parameter/noise1 = SubResource("NoiseTexture2D_16rmy")
-shader_parameter/noise2 = SubResource("NoiseTexture2D_e412v")
+shader_parameter/noise1 = SubResource("NoiseTexture2D_i8pnp")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_ln7e8")
 
 [node name="Node2D" type="Node2D"]
 
