@@ -9,7 +9,8 @@ var players =[] # holds objects that represent players
 var bubbles =[] # holds objects for all bubbles on screen
 
 var spawnRate: float = 3.0
-
+var maxBubbles = 25
+var spikedEnabled = false
 
 
 
@@ -21,7 +22,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	print(spawnRate)
+	print(maxBubbles)
+	print(spikedEnabled)
 	
 #spawn a default(?) bubble somewhere on the board
 func spawnBubble(where: Vector2) -> void:
