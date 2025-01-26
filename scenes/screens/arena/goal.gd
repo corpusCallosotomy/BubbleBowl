@@ -14,7 +14,7 @@ func _process(_delta):
 
 
 func _on_body_entered(body):
-	#print(body)
+	print(body)
 	if body.is_in_group("Bubble"):
 		makeConfetti()
 		body.killBubble()
@@ -28,6 +28,8 @@ func _on_body_entered(body):
 			$AudioStreamPlayer2D.pitch_scale = 0.9 + (scoreToAdd/10.0)
 
 			$AudioStreamPlayer2D.play()
+	if body.is_in_group("Spike"):
+		body.teleportHome()
 
 func makeConfetti():
 	var confettiInstance = confettiParticleScene.instantiate()
