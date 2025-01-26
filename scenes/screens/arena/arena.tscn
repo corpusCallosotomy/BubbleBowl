@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dysj0hpncct4l"]
+[gd_scene load_steps=19 format=3 uid="uid://dysj0hpncct4l"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
 [ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
@@ -60,10 +60,10 @@ position = Vector2(960, 540)
 current = true
 
 [node name="Player" parent="." instance=ExtResource("1_etxjp")]
-position = Vector2(351, 459)
+position = Vector2(351, 540)
 
 [node name="Player2" parent="." instance=ExtResource("1_etxjp")]
-position = Vector2(1713, 565)
+position = Vector2(1569, 540)
 isPlayer1 = false
 
 [node name="Goal" parent="." instance=ExtResource("2_v7y4l")]
