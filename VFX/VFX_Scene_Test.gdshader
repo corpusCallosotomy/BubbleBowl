@@ -15,5 +15,5 @@ void fragment() {
 	vec4 screen_col = texture(SCREEN_TEXTURE, SCREEN_UV + distortion_strength * vec2(depth));
 	vec4 top_light = smoothstep(light_start, light_end, depth) * top_color;
 	COLOR = screen_col * tone_color + top_light;
-	COLOR.a = 1.0;
+	COLOR.a = 0.9;
 }

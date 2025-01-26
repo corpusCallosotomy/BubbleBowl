@@ -24,9 +24,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(spawnRate)
-	print(maxBubbles)
-	print(spikedEnabled)
+	pass
 	
 #spawn a default(?) bubble somewhere on the board
 func spawnBubble(where: Vector2) -> void:
@@ -40,4 +38,8 @@ func Score(team: int,size: int) -> void:
 	scores[team] +=size
 	
 func getScore(team: int) -> int:
+		print(scores[team])
 		return scores[team]
+		
+func resetScores() -> void:
+		scores = [0,0]

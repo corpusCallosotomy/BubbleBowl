@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
 [ext_resource type="Script" path="res://scripts/score_display.gd" id="6_alnfp"]
 [ext_resource type="Texture2D" uid="uid://qoo2rshqtl53" path="res://VFX/Sand_Texture_V2.png" id="6_jblcl"]
+[ext_resource type="Shader" path="res://VFX/VFX_Scene_Test.gdshader" id="8_12cvm"]
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="9_6inbr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3glh"]
 radius = 51.4781
@@ -20,6 +22,34 @@ size = Vector2(100, 500)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h56k3"]
 font_size = 72
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qnldv"]
+noise_type = 2
+seed = 1
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_16rmy"]
+seamless = true
+noise = SubResource("FastNoiseLite_qnldv")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_histy"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e412v"]
+seamless = true
+noise = SubResource("FastNoiseLite_histy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rvomy"]
+shader = ExtResource("8_12cvm")
+shader_parameter/scroll1 = Vector2(0.01, 0.01)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strength = 0.0600001
+shader_parameter/tone_color = Color(0, 0.4, 1, 1)
+shader_parameter/top_color = Color(0, 1, 1, 1)
+shader_parameter/light_start = 0.1
+shader_parameter/light_end = 1.0
+shader_parameter/noise1 = SubResource("NoiseTexture2D_16rmy")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_e412v")
 
 [node name="Node2D" type="Node2D"]
 
@@ -81,11 +111,11 @@ position = Vector2(1960, 540)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Field Bounds/Goal 2 Back Wall"]
 shape = SubResource("RectangleShape2D_8jfff")
 
-[node name="ScoreDisplay" type="Node2D" parent="." node_paths=PackedStringArray("score1", "score2")]
+[node name="ScoreDisplay" type="Node2D" parent="." node_paths=PackedStringArray("score1Display", "score2Display")]
 position = Vector2(960, 0)
 script = ExtResource("6_alnfp")
-score1 = NodePath("Score1")
-score2 = NodePath("Score2")
+score1Display = NodePath("Score1")
+score2Display = NodePath("Score2")
 
 [node name="Score1" type="Label" parent="ScoreDisplay"]
 modulate = Color(1, 0, 0, 1)
@@ -113,7 +143,7 @@ text = "00000"
 label_settings = SubResource("LabelSettings_h56k3")
 
 [node name="FloorSprite" type="Sprite2D" parent="."]
-z_index = -2
+z_index = -10
 texture_repeat = 2
 position = Vector2(1027, 468)
 rotation = 0.0105247
@@ -121,3 +151,8 @@ scale = Vector2(0.290605, 0.28945)
 texture = ExtResource("6_jblcl")
 region_enabled = true
 region_rect = Rect2(0, -4576, 10060, 6624)
+
+[node name="Water" type="Sprite2D" parent="FloorSprite"]
+material = SubResource("ShaderMaterial_rvomy")
+scale = Vector2(100, 100)
+texture = ExtResource("9_6inbr")
