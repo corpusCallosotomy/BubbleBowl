@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 @export var isPlayer1: bool = true
+@export var p1Sprite: Texture2D = null
+@export var p2Sprite: Texture2D = null
+
 @export var pushForce: float = 800.0
 @export var knockbackForce: float = 1.2
 const SPEED: float = 30.0
@@ -13,6 +16,14 @@ var facingAngle: float = 0.0
 @export var sound_collideWithWall: AudioStream
 @export var sound_collideWithSeal: AudioStream
 @export var sound_collideWithBubble: AudioStream
+
+
+func _ready() -> void:
+	if isPlayer1:
+		$Icon.texture = p1Sprite
+	else:
+		$Icon.texture = p2Sprite
+	
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(velocity * delta)
