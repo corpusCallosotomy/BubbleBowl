@@ -121,6 +121,10 @@ label_settings = SubResource("LabelSettings_h56k3")
 
 [node name="FloorSprite" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(969, 548)
-scale = Vector2(0.935, 0.515)
+texture_repeat = 2
+position = Vector2(1027, 468)
+rotation = 0.0105247
+scale = Vector2(0.290605, 0.28945)
 texture = ExtResource("6_jblcl")
+region_enabled = true
+region_rect = Rect2(0, -4576, 10060, 6624)
