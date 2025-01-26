@@ -19,11 +19,11 @@ var bubbleValue : int = 1
 var bubbleScale : float = 1.0
 func _ready():
 	self.body_entered.connect(bodyEntered)
-	wobble = 100
+	wobble = 50
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	
 	var velocity = linear_velocity
 	
@@ -49,7 +49,7 @@ func _process(_delta):
 
 
 func bodyEntered(body):
-	wobble = 100
+	wobble = 50
 	
 	#print("Bubble hit a body")
 	if body.is_in_group("Bubble"):

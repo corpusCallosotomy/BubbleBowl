@@ -1,7 +1,9 @@
 
 
+
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
 [ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
+[ext_resource type="PackedScene" uid="uid://cov2mx0dhro42" path="res://scenes/bubbles/spike_spawner.tscn" id="3_x5vn2"]
 [ext_resource type="Texture2D" uid="uid://ca4ll8jd3evah" path="res://scenes/screens/arena/quickbg.png" id="4_cehqr"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
 [ext_resource type="Script" path="res://scripts/score_display.gd" id="6_alnfp"]
@@ -68,6 +70,10 @@ position = Vector2(351, 540)
 position = Vector2(1569, 540)
 isPlayer1 = false
 
+[node name="Fieldmap" type="Sprite2D" parent="."]
+texture = ExtResource("4_cehqr")
+centered = false
+
 [node name="Goal" parent="." instance=ExtResource("2_v7y4l")]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(71, 540)
@@ -76,6 +82,9 @@ position = Vector2(71, 540)
 modulate = Color(0, 0, 1, 1)
 position = Vector2(1849, 540)
 isPlayer1Goal = false
+
+[node name="SpikeSpawner" parent="." instance=ExtResource("3_x5vn2")]
+position = Vector2(960, 338)
 
 [node name="BubbleSpawner" type="Area2D" parent="."]
 position = Vector2(1010, 492)
