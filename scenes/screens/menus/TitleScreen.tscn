@@ -1,31 +1,29 @@
-[gd_scene load_steps=14 format=3 uid="uid://cblvjtwmofbld"]
+[gd_scene load_steps=16 format=3 uid="uid://cblvjtwmofbld"]
 
+[ext_resource type="Texture2D" uid="uid://dkjk3h12fvdvm" path="res://art/UI/Button_Base.png" id="1_t06hj"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_32q7n"]
-[ext_resource type="Texture2D" uid="uid://b6mmuy17p4u77" path="res://art/UI/Buttons/Button_Highlighted.png" id="2_qvx5d"]
+[ext_resource type="Texture2D" uid="uid://ceuq8byybh1mb" path="res://art/UI/Buttons/Finished_Button_With_Circles_Darkened.png" id="2_i22td"]
 [ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="2_yqd12"]
 [ext_resource type="Texture2D" uid="uid://bfhf585p6v86g" path="res://art/UI/Buttons/Button_Base.png" id="3_e4j7c"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/quitApplication.gd" id="3_kn0er"]
+[ext_resource type="StyleBox" uid="uid://bos66wfdey6cp" path="res://scenes/screens/menus/ButtonHover.tres" id="6_klkbi"]
+[ext_resource type="StyleBox" uid="uid://5qf2uatyrts4" path="res://scenes/screens/menus/Button.tres" id="7_5adjp"]
+[ext_resource type="AudioStream" uid="uid://dwtteyw2sn21a" path="res://audio/sfx/ui/UI_Select.wav" id="7_qg75e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_di763"]
-texture = ExtResource("2_qvx5d")
+texture = ExtResource("2_i22td")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_elwkr"]
 texture = ExtResource("3_e4j7c")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kyd0"]
-texture = ExtResource("2_qvx5d")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgtiy"]
-texture = ExtResource("3_e4j7c")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7hijq"]
-texture = ExtResource("2_qvx5d")
+texture = ExtResource("2_i22td")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4k1ju"]
 texture = ExtResource("3_e4j7c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ddkuf"]
-texture = ExtResource("2_qvx5d")
+texture = ExtResource("2_i22td")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jbvn0"]
 texture = ExtResource("3_e4j7c")
@@ -55,18 +53,25 @@ anchor_right = 1.0
 offset_bottom = 392.0
 grow_horizontal = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Title"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Title"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = -308.0
+offset_right = 1484.0
+offset_bottom = 692.0
+pivot_offset = Vector2(500, 500)
+texture = ExtResource("1_t06hj")
+expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Title/CenterContainer"]
-layout_mode = 2
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Title"]
+visible = false
+clip_contents = true
+layout_mode = 0
+offset_right = 2048.0
+offset_bottom = 2048.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Title"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,22 +101,25 @@ size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ButtonMenu"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -180.5
+offset_right = 181.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 42.85
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/ButtonMenu/VBoxContainer" node_paths=PackedStringArray("sfxSound")]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(1.20327e-06, 0, 0.472347, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0.443137, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_yqd12")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 80
 theme_override_styles/hover = SubResource("StyleBoxTexture_di763")
 theme_override_styles/normal = SubResource("StyleBoxTexture_elwkr")
 text = "Play"
@@ -119,21 +127,23 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_32q7n")
 nextScene = "res://scenes/screens/menus/GameModeScreen.tscn"
+sfxSound = NodePath("../../../../AudioStreamPlayer")
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="CanvasLayer/ButtonMenu/VBoxContainer" node_paths=PackedStringArray("sfxSound")]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(1.03481e-06, 0, 0.442967, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_yqd12")
-theme_override_font_sizes/font_size = 90
-theme_override_styles/hover = SubResource("StyleBoxTexture_7kyd0")
-theme_override_styles/normal = SubResource("StyleBoxTexture_qgtiy")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = ExtResource("6_klkbi")
+theme_override_styles/normal = ExtResource("7_5adjp")
 text = "Options"
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_32q7n")
 nextScene = "res://scenes/screens/menus/OptionScreen.tscn"
+sfxSound = NodePath("../../../../AudioStreamPlayer")
 
 [node name="CreditButton" type="Button" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
 layout_mode = 2
@@ -141,7 +151,7 @@ size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0.443137, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_yqd12")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 80
 theme_override_styles/hover = SubResource("StyleBoxTexture_7hijq")
 theme_override_styles/normal = SubResource("StyleBoxTexture_4k1ju")
 text = "Credits"
@@ -156,13 +166,16 @@ size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0.443137, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_yqd12")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 80
 theme_override_styles/hover = SubResource("StyleBoxTexture_ddkuf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jbvn0")
 text = "Exit"
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("3_kn0er")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qg75e")
 
 [connection signal="pressed" from="CanvasLayer/ButtonMenu/VBoxContainer/PlayButton" to="CanvasLayer/ButtonMenu/VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonMenu/VBoxContainer/OptionsButton" to="CanvasLayer/ButtonMenu/VBoxContainer/OptionsButton" method="_on_pressed"]
