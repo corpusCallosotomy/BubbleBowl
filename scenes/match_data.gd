@@ -12,7 +12,7 @@ var spawnRate: float = 3.0
 var maxBubbles = 25
 var bubbleCount: int = 0
 var spikedEnabled = false
-var spikeCount: int = 1
+var spikeCount: int = 0
 var maxScore = 100
 
 
@@ -25,6 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#print(spikeCount)
 	pass
 	
 #spawn a default(?) bubble somewhere on the board

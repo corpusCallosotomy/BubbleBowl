@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_ji7ms"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_qywtj"]
 [ext_resource type="Script" path="res://scenes/screens/menus/endscore.gd" id="2_r05ci"]
-[ext_resource type="StyleBox" path="res://scenes/screens/menus/ButtonHover.tres" id="3_v167u"]
-[ext_resource type="StyleBox" path="res://scenes/screens/menus/Button.tres" id="4_n2ag5"]
+[ext_resource type="StyleBox" uid="uid://h8l16xxvim2w" path="res://scenes/screens/menus/ButtonHover.tres" id="3_v167u"]
+[ext_resource type="StyleBox" uid="uid://dog0eafkv2ngg" path="res://scenes/screens/menus/Button.tres" id="4_n2ag5"]
 
 [node name="MatchEnd" type="Control"]
 layout_mode = 3
