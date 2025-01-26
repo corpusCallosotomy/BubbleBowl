@@ -175,23 +175,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CheckButton" type="CheckButton" parent="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -239.0
-offset_top = -33.5
-offset_right = -195.0
-offset_bottom = -9.5
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(3, 3)
-icon_alignment = 1
-expand_icon = true
-
 [node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles"]
 layout_mode = 1
 anchors_preset = 4
@@ -203,7 +186,44 @@ offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "Spiked Bubbles"
+text = "Pufferfish Count"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles" node_paths=PackedStringArray("sliderText")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -482.0
+offset_top = -7.5
+offset_right = -294.0
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 10.0
+script = ExtResource("4_sbjtm")
+sliderText = NodePath("Count")
+
+[node name="Count" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/HSlider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -15.0
+offset_right = 43.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Bubble Spawn Speed" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
 layout_mode = 2
@@ -349,7 +369,9 @@ nextScene = "res://scenes/screens/arena/arena.tscn"
 [connection signal="drag_started" from="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" method="_on_drag_started"]
 [connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider/Count" method="_on_h_slider_value_changed"]
-[connection signal="toggled" from="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/CheckButton" to="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/CheckButton" method="_on_toggled"]
+[connection signal="drag_started" from="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/HSlider" method="_on_drag_started"]
+[connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/HSlider/Count" method="_on_h_slider_value_changed"]
 [connection signal="drag_started" from="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" method="_on_drag_started"]
 [connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider/Count" method="_on_h_slider_value_changed"]
