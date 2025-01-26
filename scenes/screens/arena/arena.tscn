@@ -27,6 +27,9 @@ font_size = 72
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D"]
+current = true
+
 [node name="Player" parent="." instance=ExtResource("1_etxjp")]
 position = Vector2(351, 540)
 

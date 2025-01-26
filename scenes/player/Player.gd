@@ -10,12 +10,20 @@ const DECELERATION: float = 1000.0
 
 var facingAngle: float = 0.0
 
+@export var sound_collideWithWall: AudioStream
+@export var sound_collideWithSeal: AudioStream
+@export var sound_collideWithBubble: AudioStream
+
 func _physics_process(delta):
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		velocity += velocity.bounce(collision_info.get_normal().normalized()) * knockbackForce
-		if !collision_info.get_collider().is_in_group("Player") and !collision_info.get_collider().is_in_group("Environment"):
-			
+		if collision_info.get_collider().is_in_group("Player"): 
+			playSound(sound_collideWithSeal)
+		elif collision_info.get_collider().is_in_group("Environment"):
+			playSound(sound_collideWithWall)
+		else:
+			playSound(sound_collideWithBubble)
 			collision_info.get_collider().apply_central_impulse(-collision_info.get_normal()*pushForce)
 			#print(collision_info.get_collider())
 		
@@ -41,3 +49,19 @@ func _physics_process(delta):
 	velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
 	
 	#move_and_slide()
+
+const soundCooldown = 500
+var lastSoundPlayed: int
+
+func playSound(sound: AudioStream):	
+	var currentTime = Time.get_ticks_msec()
+	
+	if currentTime - lastSoundPlayed < soundCooldown:
+		return
+	
+	lastSoundPlayed = currentTime
+	var player = $AudioStreamPlayer
+	player.playing = false
+	player.stream = sound
+	player.play()
+	
