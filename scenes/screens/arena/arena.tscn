@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://pbnhy6mm8f56"]
+[gd_scene load_steps=20 format=3 uid="uid://dysj0hpncct4l"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
+[ext_resource type="PackedScene" uid="uid://ckhissng2jj1m" path="res://scenes/bubbles/Bubble.tscn" id="2_rqac2"]
 [ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
 [ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
 [ext_resource type="Script" path="res://scripts/score_display.gd" id="6_alnfp"]
 [ext_resource type="Texture2D" uid="uid://qoo2rshqtl53" path="res://VFX/Sand_Texture_V2.png" id="6_jblcl"]
+[ext_resource type="Shader" path="res://VFX/VFX_Scene_Test.gdshader" id="8_12cvm"]
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="9_6inbr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3glh"]
 radius = 51.4781
@@ -21,6 +24,34 @@ size = Vector2(100, 500)
 [sub_resource type="LabelSettings" id="LabelSettings_h56k3"]
 font_size = 72
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qnldv"]
+noise_type = 2
+seed = 1
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_16rmy"]
+seamless = true
+noise = SubResource("FastNoiseLite_qnldv")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_histy"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e412v"]
+seamless = true
+noise = SubResource("FastNoiseLite_histy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rvomy"]
+shader = ExtResource("8_12cvm")
+shader_parameter/scroll1 = Vector2(0.01, 0.01)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strength = 0.0600001
+shader_parameter/tone_color = Color(0, 0.4, 1, 1)
+shader_parameter/top_color = Color(0, 1, 1, 1)
+shader_parameter/light_start = 0.282
+shader_parameter/light_end = 1.0
+shader_parameter/noise1 = SubResource("NoiseTexture2D_16rmy")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_e412v")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -30,16 +61,18 @@ position = Vector2(960, 540)
 current = true
 
 [node name="Player" parent="." instance=ExtResource("1_etxjp")]
-position = Vector2(351, 540)
+position = Vector2(351, 459)
 
 [node name="Player2" parent="." instance=ExtResource("1_etxjp")]
-position = Vector2(1569, 540)
+position = Vector2(1713, 565)
 isPlayer1 = false
 
 [node name="Goal" parent="." instance=ExtResource("2_v7y4l")]
+modulate = Color(1, 0, 0, 1)
 position = Vector2(71, 540)
 
 [node name="Goal2" parent="." instance=ExtResource("2_v7y4l")]
+modulate = Color(0, 0, 1, 1)
 position = Vector2(1849, 540)
 isPlayer1Goal = false
 
@@ -85,6 +118,7 @@ position = Vector2(347, 617)
 [node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
 position = Vector2(347, 753)
 
+
 [node name="ScoreDisplay" type="Node2D" parent="." node_paths=PackedStringArray("score1Display", "score2Display")]
 position = Vector2(960, 0)
 script = ExtResource("6_alnfp")
@@ -93,30 +127,41 @@ score2Display = NodePath("Score2")
 endScore = 1
 
 [node name="Score1" type="Label" parent="ScoreDisplay"]
-offset_left = 50.0
+modulate = Color(1, 0, 0, 1)
+offset_left = -600.0
 offset_top = 25.0
-offset_right = 550.0
+offset_right = -100.0
 offset_bottom = 125.0
-theme = SubResource("Theme_jgdss")
-text = "00000"
-label_settings = SubResource("LabelSettings_h56k3")
-
-[node name="Score2" type="Label" parent="ScoreDisplay"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -550.0
-offset_top = 25.0
-offset_right = -50.0
-offset_bottom = 125.0
-grow_horizontal = 0
 theme = SubResource("Theme_jgdss")
 text = "00000"
 label_settings = SubResource("LabelSettings_h56k3")
 horizontal_alignment = 2
 
+[node name="Score2" type="Label" parent="ScoreDisplay"]
+modulate = Color(0.32, 0.32, 1, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 100.0
+offset_top = 25.0
+offset_right = 600.0
+offset_bottom = 125.0
+grow_horizontal = 0
+theme = SubResource("Theme_jgdss")
+text = "00000"
+label_settings = SubResource("LabelSettings_h56k3")
+
 [node name="FloorSprite" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(969, 548)
-scale = Vector2(0.935, 0.515)
+z_index = -10
+texture_repeat = 2
+position = Vector2(1027, 468)
+rotation = 0.0105247
+scale = Vector2(0.290605, 0.28945)
 texture = ExtResource("6_jblcl")
+region_enabled = true
+region_rect = Rect2(0, -4576, 10060, 6624)
+
+[node name="Water" type="Sprite2D" parent="FloorSprite"]
+material = SubResource("ShaderMaterial_rvomy")
+scale = Vector2(100, 100)
+texture = ExtResource("9_6inbr")
