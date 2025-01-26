@@ -131,6 +131,7 @@ offset_top = -24.5
 offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
+scale = Vector2(0.925, 1)
 theme_override_font_sizes/font_size = 56
 text = "Max Score"
 
@@ -188,6 +189,7 @@ offset_top = -24.5
 offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
+scale = Vector2(0.925, 1)
 theme_override_font_sizes/font_size = 56
 text = "Pufferfish Count"
 
@@ -242,8 +244,9 @@ offset_top = -24.5
 offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
+scale = Vector2(0.925, 1)
 theme_override_font_sizes/font_size = 56
-text = "Spawn Speed"
+text = "Bubble Frequency"
 
 [node name="HSlider" type="HSlider" parent="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed" node_paths=PackedStringArray("sliderText")]
 layout_mode = 1
@@ -299,6 +302,7 @@ offset_top = -24.5
 offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
+scale = Vector2(0.925, 1)
 theme_override_font_sizes/font_size = 56
 text = "Max Bubbles"
 

@@ -26,3 +26,4 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_rwsfv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
