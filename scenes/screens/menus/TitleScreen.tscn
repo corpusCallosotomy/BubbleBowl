@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cblvjtwmofbld"]
+[gd_scene load_steps=24 format=3 uid="uid://cblvjtwmofbld"]
 
+[ext_resource type="Texture2D" uid="uid://qoo2rshqtl53" path="res://VFX/Sand_Texture_V2.png" id="1_8ghdk"]
 [ext_resource type="Texture2D" uid="uid://dkjk3h12fvdvm" path="res://art/UI/Button_Base.png" id="1_t06hj"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_32q7n"]
 [ext_resource type="Texture2D" uid="uid://ceuq8byybh1mb" path="res://art/UI/Buttons/Finished_Button_With_Circles_Darkened.png" id="2_i22td"]
@@ -9,6 +10,36 @@
 [ext_resource type="StyleBox" uid="uid://bos66wfdey6cp" path="res://scenes/screens/menus/ButtonHover.tres" id="6_klkbi"]
 [ext_resource type="StyleBox" uid="uid://5qf2uatyrts4" path="res://scenes/screens/menus/Button.tres" id="7_5adjp"]
 [ext_resource type="AudioStream" uid="uid://dwtteyw2sn21a" path="res://audio/sfx/ui/UI_Select.wav" id="7_qg75e"]
+[ext_resource type="Shader" path="res://VFX/Main_Menu_VFX.gdshader" id="8_kudiv"]
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="9_4gpsr"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ggl45"]
+noise_type = 2
+seed = 1
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_16rmy"]
+seamless = true
+noise = SubResource("FastNoiseLite_ggl45")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6f6ms"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e412v"]
+seamless = true
+noise = SubResource("FastNoiseLite_6f6ms")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2yjpo"]
+shader = ExtResource("8_kudiv")
+shader_parameter/scroll1 = Vector2(0.01, 0.01)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strength = 0.132
+shader_parameter/tone_color = Color(0.0576, 0.59904, 0.96, 1)
+shader_parameter/top_color = Color(1, 1, 1, 1)
+shader_parameter/light_start = 0.212
+shader_parameter/light_end = 1.0
+shader_parameter/noise1 = SubResource("NoiseTexture2D_16rmy")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_e412v")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_di763"]
 texture = ExtResource("2_i22td")
@@ -38,6 +69,23 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = -477.0
+offset_top = -632.0
+offset_right = 4523.0
+offset_bottom = 3368.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(500, 500)
+texture = ExtResource("1_8ghdk")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Water" type="Sprite2D" parent="CanvasLayer/TextureRect"]
+material = SubResource("ShaderMaterial_2yjpo")
+position = Vector2(832, 960)
+scale = Vector2(100, 100)
+texture = ExtResource("9_4gpsr")
+
 [node name="BG" type="ColorRect" parent="CanvasLayer"]
 z_index = -1
 anchors_preset = 15
@@ -45,9 +93,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+color = Color(0.916999, 0.744031, 0.506993, 1)
 
 [node name="Title" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 392.0
@@ -85,6 +134,7 @@ bbcode_enabled = true
 text = "[center]The Biannual Birmingham Double Bubble Bubble Ball Bubble Bowl[/center]"
 
 [node name="ButtonMenu" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -117,6 +167,7 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0.443137, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.443137, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_yqd12")
 theme_override_font_sizes/font_size = 80
