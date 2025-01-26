@@ -10,6 +10,8 @@ extends RigidBody2D
 @export var sound_collideWithBubble: AudioStream
 @export var sound_mergeWithBubble: AudioStream
 
+var popParticleScene = preload("res://VFX/pop_bubble.tscn")
+
 var wobble = 0.0
 var angle = 0.0
 
@@ -126,4 +128,7 @@ func playSound(sound: AudioStream):
 
 func killBubble():
 	MatchData.bubbleCount-=1
+	var popInstance = popParticleScene.instantiate()
+	add_sibling.call_deferred(popInstance)
+	popInstance.position=self.position
 	queue_free()
