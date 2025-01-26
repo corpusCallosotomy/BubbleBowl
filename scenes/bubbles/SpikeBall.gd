@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var spikeScene = preload("res://scenes/bubbles/SpikeBubble.tscn")
+
 @export var bubbleSize: int = 1
 
 @export var spriteParent: Node2D
@@ -10,13 +12,18 @@ var angle = 0.0
 
 var bubbleValue : int = 1
 var bubbleScale : float = 1.0
+
+var resetPosition = Vector2.ZERO
+
 func _ready():
+	resetPosition = self.position
+	print(resetPosition)
 	self.body_entered.connect(bodyEntered)
-	wobble = 100
+	wobble = 50
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	
 	var velocity = linear_velocity
 	
@@ -36,11 +43,9 @@ func _process(_delta):
 		
 	if(wobble > 0):
 		wobble *= 0.9
-	
-
 
 func bodyEntered(body):
-	wobble = 100
+	wobble = 50
 	
 	#print("Bubble hit a body")
 	if body.is_in_group("Bubble"):
@@ -50,3 +55,11 @@ func bodyEntered(body):
 func _on_body_entered(body):
 	#print("HELP")
 	bodyEntered(body)
+
+func teleportHome():
+	# I lied. We're making a duplicate and killing ourselves. LET'S RIDE THE MECHANISM!
+	var spikeInstance = spikeScene.instantiate()
+	add_sibling.call_deferred(spikeInstance)
+	spikeInstance.position=resetPosition
+	queue_free()
+	
