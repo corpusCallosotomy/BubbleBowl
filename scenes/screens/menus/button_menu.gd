@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	MatchData.spikedEnabled = $VBoxContainer/SpikeBubbles/CheckButton.button_pressed
+	#MatchData.spikedEnabled = $VBoxContainer/SpikeBubbles/CheckButton.button_pressed
 	MatchData.spawnRate = $"VBoxContainer/Bubble Spawn Speed/HSlider".value
 	MatchData.maxBubbles = $"VBoxContainer/Max Bubbles/HSlider".value
 	MatchData.maxScore = $"VBoxContainer/Max Score/HSlider".value
