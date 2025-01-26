@@ -35,6 +35,6 @@ func tryPosition():
 	spawnBubble()
 
 func spawnLoop():
-	while bubbleCount<25:
+	while bubbleCount<MatchData.maxBubbles:
 		await get_tree().create_timer(MatchData.spawnRate).timeout
 		tryPosition()
