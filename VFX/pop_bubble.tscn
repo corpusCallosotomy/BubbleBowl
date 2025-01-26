@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhb0fickpf67j"]
+
+[ext_resource type="Script" path="res://VFX/emit_then_die.gd" id="1_eg5vd"]
+
+[sub_resource type="Curve" id="Curve_k0qyp"]
+_data = [Vector2(0.246667, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.252747), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ri2ev"]
+curve = SubResource("Curve_k0qyp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k5bm2"]
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 40.0
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 40.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_ri2ev")
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 4.947
+turbulence_influence_min = 0.0
+turbulence_initial_displacement_min = 1.49012e-06
+turbulence_initial_displacement_max = 1.49012e-06
+
+[node name="PopBubble" type="GPUParticles2D"]
+emitting = false
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_k5bm2")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("1_eg5vd")
