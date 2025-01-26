@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://6kpn6w8xra7k"]
+
+[ext_resource type="Script" path="res://VFX/emit_then_die.gd" id="1_gtqbu"]
+
+[sub_resource type="Gradient" id="Gradient_cp46g"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v8eqw"]
+gradient = SubResource("Gradient_cp46g")
+
+[sub_resource type="Curve" id="Curve_peg8l"]
+_data = [Vector2(0.246667, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.252747), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l3xmf"]
+curve = SubResource("Curve_peg8l")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f0g0o"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(55, 75, 1)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, -1, 0)
+spread = 16.18
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_l3xmf")
+color = Color(0, 1, 1, 1)
+color_ramp = SubResource("GradientTexture1D_v8eqw")
+turbulence_enabled = true
+turbulence_noise_scale = 0.0
+
+[node name="Confetti" type="GPUParticles2D"]
+z_index = 2
+emitting = false
+amount = 120
+process_material = SubResource("ParticleProcessMaterial_f0g0o")
+lifetime = 0.75
+one_shot = true
+explosiveness = 0.95
+script = ExtResource("1_gtqbu")
