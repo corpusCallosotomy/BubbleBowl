@@ -12,4 +12,5 @@ func _on_pressed() -> void:
 	Engine.time_scale = 1
 	AudioPlayer.play_FX(transition_fx, 0)
 	MatchData.resetScores()
+	MatchData.bubbleCount = 0
 	get_tree().change_scene_to_file(nextScene)

@@ -3,16 +3,18 @@ extends Area2D
 var rng = RandomNumberGenerator.new()
 var bubbleScene = preload("res://scenes/bubbles/Bubble.tscn")
 var spikeScene = preload("res://scenes/bubbles/SpikeBubble.tscn")
-#var bubbleCount: int = 0
+
+var readyToSpawn: bool = true
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	spawnLoop()
+#func _ready():
+	#spawnLoop()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if readyToSpawn == true:
+		spawnLoop()
 
 func spawnBubble():
 	#print("TRYPOS LOOP EXITED")
@@ -36,9 +38,11 @@ func tryPosition():
 	spawnBubble()
 
 func spawnLoop():
-	while MatchData.bubbleCount<MatchData.maxBubbles:
-		await get_tree().create_timer(MatchData.spawnRate).timeout
+	if MatchData.bubbleCount<MatchData.maxBubbles:
 		tryPosition()
+		readyToSpawn = false
+		await get_tree().create_timer(MatchData.spawnRate).timeout
+		readyToSpawn = true
 
 #func spawnSpikes():
 	#
