@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://w66vadkynyw8"]
+[gd_scene load_steps=16 format=3 uid="uid://w66vadkynyw8"]
 
 [ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_2458e"]
+[ext_resource type="Script" path="res://scenes/screens/menus/pause_screen.gd" id="1_ey1b5"]
 [ext_resource type="Texture2D" uid="uid://lkgpki1evqsg" path="res://art/UI/Buttons/Back_Button_Hover.png" id="2_p4nrc"]
 [ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/UI/Buttons/Back_Button.png" id="3_dlt18"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="4_3nwua"]
@@ -28,12 +29,14 @@ texture = ExtResource("6_1syyy")
 texture = ExtResource("7_kdxkp")
 
 [node name="PauseScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ey1b5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
