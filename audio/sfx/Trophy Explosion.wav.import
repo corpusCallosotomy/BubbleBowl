@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://n7s7joonyufa"
+path="res://.godot/imported/Trophy Explosion.wav-8dc7fcc28230f6392dec2bd7a2927269.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Trophy Explosion.wav"
+dest_files=["res://.godot/imported/Trophy Explosion.wav-8dc7fcc28230f6392dec2bd7a2927269.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

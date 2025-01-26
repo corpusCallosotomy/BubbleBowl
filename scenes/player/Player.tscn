@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmkpgtxmycs8j"]
+[gd_scene load_steps=5 format=3 uid="uid://cmkpgtxmycs8j"]
 
 [ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_dks8x"]
-[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="1_qjpkx"]
+[ext_resource type="AudioStream" uid="uid://bnx4gby04jb86" path="res://audio/sfx/SEAL_HitsWall.wav" id="2_88iup"]
+[ext_resource type="Texture2D" uid="uid://dlqlxbh42q168" path="res://VFX/round_seal.png" id="2_rwsfv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtdev"]
 radius = 70.2567
@@ -9,9 +10,15 @@ radius = 70.2567
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_dks8x")
+sound_collideWithWall = ExtResource("2_88iup")
+sound_collideWithSeal = ExtResource("2_88iup")
+sound_collideWithBubble = ExtResource("2_88iup")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 shape = SubResource("CircleShape2D_rtdev")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("1_qjpkx")
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_rwsfv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

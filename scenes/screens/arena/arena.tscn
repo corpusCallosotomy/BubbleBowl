@@ -1,31 +1,81 @@
-[gd_scene load_steps=8 format=3 uid="uid://pbnhy6mm8f56"]
+
+[gd_scene load_steps=19 format=3 uid="uid://dysj0hpncct4l"]
+
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
-[ext_resource type="PackedScene" uid="uid://ckhissng2jj1m" path="res://scenes/bubbles/Bubble.tscn" id="2_rqac2"]
-[ext_resource type="PackedScene" uid="uid://b3fh5sgpguw6g" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
-[ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
+[ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
+[ext_resource type="Texture2D" uid="uid://ca4ll8jd3evah" path="res://scenes/screens/arena/quickbg.png" id="4_cehqr"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
-[ext_resource type="PackedScene" uid="uid://w66vadkynyw8" path="res://scenes/screens/menus/PauseScreen.tscn" id="6_fc7ge"]
+
+[ext_resource type="Script" path="res://scripts/score_display.gd" id="6_alnfp"]
+[ext_resource type="Texture2D" uid="uid://qoo2rshqtl53" path="res://VFX/Sand_Texture_V2.png" id="6_jblcl"]
+[ext_resource type="Shader" path="res://VFX/VFX_Scene_Test.gdshader" id="8_12cvm"]
+[ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="9_6inbr"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3glh"]
 radius = 51.4781
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jfff"]
+size = Vector2(100, 500)
+
+[sub_resource type="FontVariation" id="FontVariation_o0ld8"]
+
+[sub_resource type="Theme" id="Theme_jgdss"]
+/fonts/Font = SubResource("FontVariation_o0ld8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_h56k3"]
+font_size = 72
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qnldv"]
+noise_type = 2
+seed = 1
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_16rmy"]
+seamless = true
+noise = SubResource("FastNoiseLite_qnldv")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_histy"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e412v"]
+seamless = true
+noise = SubResource("FastNoiseLite_histy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rvomy"]
+shader = ExtResource("8_12cvm")
+shader_parameter/scroll1 = Vector2(0.01, 0.01)
+shader_parameter/scroll2 = Vector2(-0.05, -0.05)
+shader_parameter/distortion_strength = 0.0600001
+shader_parameter/tone_color = Color(0, 0.4, 1, 1)
+shader_parameter/top_color = Color(0, 1, 1, 1)
+shader_parameter/light_start = 0.1
+shader_parameter/light_end = 1.0
+shader_parameter/noise1 = SubResource("NoiseTexture2D_16rmy")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_e412v")
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D"]
+current = true
+
 [node name="Player" parent="." instance=ExtResource("1_etxjp")]
-position = Vector2(351, 459)
+position = Vector2(351, 540)
 
 [node name="Player2" parent="." instance=ExtResource("1_etxjp")]
-position = Vector2(1713, 565)
+position = Vector2(1569, 540)
 isPlayer1 = false
 
 [node name="Goal" parent="." instance=ExtResource("2_v7y4l")]
+modulate = Color(1, 0, 0, 1)
 position = Vector2(71, 540)
 
 [node name="Goal2" parent="." instance=ExtResource("2_v7y4l")]
+modulate = Color(0, 0, 1, 1)
 position = Vector2(1849, 540)
 isPlayer1Goal = false
 
@@ -38,27 +88,76 @@ script = ExtResource("5_k3v74")
 shape = SubResource("CircleShape2D_w3glh")
 
 [node name="Fieldmap" type="Sprite2D" parent="."]
-texture = ExtResource("3_khlq0")
+texture = ExtResource("4_cehqr")
 centered = false
 
-[node name="fieldceiling" type="StaticBody2D" parent="." groups=["Environment"]]
+[node name="Field Bounds" type="Node" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fieldceiling"]
+[node name="fieldceiling" type="StaticBody2D" parent="Field Bounds" groups=["Environment"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Field Bounds/fieldceiling"]
 polygon = PackedVector2Array(1917, 0, 0.1, 0, 0, 0.7, 0, 318.5, 3, 320.9, 3, 323, 230, 322, 234.7, 322, 240, 292.2, 240, 286.4, 249, 260.3, 249, 257.4, 265, 229.5, 265, 227.7, 284, 206.8, 284, 204.9, 311, 184, 311, 183.2, 337, 170.2, 337, 169.4, 369, 160.5, 369, 159.8, 399, 157.9, 399, 157, 1534, 159, 1543.7, 159, 1584.7, 171, 1586.5, 171, 1611.4, 186, 1613.3, 186, 1636.3, 206, 1637, 206, 1655, 229, 1655.8, 229, 1670.8, 259, 1671.5, 259, 1679.5, 288, 1680.2, 288, 1682, 303.2, 1682, 313.5, 1685, 319.5, 1685, 321.4, 1689.7, 323, 1916, 323, 1920, 318, 1920, 2.4)
 
-[node name="fieldfloor" type="StaticBody2D" parent="." groups=["Environment"]]
+[node name="fieldfloor" type="StaticBody2D" parent="Field Bounds" groups=["Environment"]]
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="fieldfloor"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Field Bounds/fieldfloor"]
 polygon = PackedVector2Array(1917, 759, 1917, 757, 1690, 758, 1685.3, 758, 1680, 787.8, 1680, 793.5, 1671, 819.7, 1671, 822.5, 1655, 850.5, 1655, 852.2, 1636, 873.2, 1636, 875, 1611, 895, 1611, 895.7, 1583, 909.8, 1583, 910.5, 1551, 919.5, 1551, 920.1, 1522, 922.1, 1522, 922.9, 386, 921, 376.3, 921, 335.3, 909, 333.5, 909, 309.5, 895, 307.7, 895, 282.8, 873, 282, 873, 263, 848, 262.3, 848, 249.3, 821, 248.5, 821, 240.5, 792, 239.7, 792, 235, 760.7, 235, 758, 3, 757, 3, 758, 0.4, 758, 0, 759.7, 0, 1077.5, 3, 1079.9, 1917.6, 1080, 1920, 1077, 1920, 761.4)
 
-[node name="Bubble" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(347, 617)
+[node name="Goal 1 Back Wall" type="StaticBody2D" parent="Field Bounds" groups=["Environment"]]
+position = Vector2(-40, 540)
 
-[node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
-position = Vector2(347, 753)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Field Bounds/Goal 1 Back Wall"]
+shape = SubResource("RectangleShape2D_8jfff")
 
-[node name="OptionScreen" parent="." instance=ExtResource("6_fc7ge")]
-offset_left = 921.0
-offset_top = 478.0
-offset_right = 921.0
-offset_bottom = 478.0
+[node name="Goal 2 Back Wall" type="StaticBody2D" parent="Field Bounds" groups=["Environment"]]
+position = Vector2(1960, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Field Bounds/Goal 2 Back Wall"]
+shape = SubResource("RectangleShape2D_8jfff")
+
+[node name="ScoreDisplay" type="Node2D" parent="." node_paths=PackedStringArray("score1Display", "score2Display")]
+position = Vector2(960, 0)
+script = ExtResource("6_alnfp")
+score1Display = NodePath("Score1")
+score2Display = NodePath("Score2")
+
+[node name="Score1" type="Label" parent="ScoreDisplay"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -600.0
+offset_top = 25.0
+offset_right = -100.0
+offset_bottom = 125.0
+theme = SubResource("Theme_jgdss")
+text = "00000"
+label_settings = SubResource("LabelSettings_h56k3")
+horizontal_alignment = 2
+
+[node name="Score2" type="Label" parent="ScoreDisplay"]
+modulate = Color(0.32, 0.32, 1, 1)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 100.0
+offset_top = 25.0
+offset_right = 600.0
+offset_bottom = 125.0
+grow_horizontal = 0
+theme = SubResource("Theme_jgdss")
+text = "00000"
+label_settings = SubResource("LabelSettings_h56k3")
+
+[node name="FloorSprite" type="Sprite2D" parent="."]
+z_index = -10
+texture_repeat = 2
+position = Vector2(1027, 468)
+rotation = 0.0105247
+scale = Vector2(0.290605, 0.28945)
+texture = ExtResource("6_jblcl")
+region_enabled = true
+region_rect = Rect2(0, -4576, 10060, 6624)
+
+[node name="Water" type="Sprite2D" parent="FloorSprite"]
+material = SubResource("ShaderMaterial_rvomy")
+scale = Vector2(100, 100)
+texture = ExtResource("9_6inbr")
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://baja085pndt5f"]
+[gd_scene load_steps=13 format=3 uid="uid://baja085pndt5f"]
 
 [ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_o1mm5"]
 [ext_resource type="Texture2D" uid="uid://lkgpki1evqsg" path="res://art/UI/Buttons/Back_Button_Hover.png" id="1_x2pen"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/UI/Buttons/Back_Button.png" id="2_tvifm"]
 [ext_resource type="Texture2D" uid="uid://b6mmuy17p4u77" path="res://art/UI/Buttons/Button_Highlighted.png" id="4_2rrbq"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/settings/sliderLabel.gd" id="4_sbjtm"]
+[ext_resource type="Script" path="res://scenes/screens/menus/button_menu.gd" id="5_86evn"]
 [ext_resource type="Texture2D" uid="uid://bfhf585p6v86g" path="res://art/UI/Buttons/Button_Base.png" id="5_b3l0v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2dexy"]
@@ -99,6 +100,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("5_86evn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ButtonMenu"]
 layout_mode = 1
@@ -234,7 +236,10 @@ offset_bottom = 8.5
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(2, 2)
-max_value = 10.0
+min_value = 0.25
+max_value = 30.0
+step = 0.25
+value = 3.0
 script = ExtResource("4_sbjtm")
 sliderText = NodePath("Count")
 
@@ -252,7 +257,7 @@ offset_bottom = 14.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
-text = "0
+text = "3
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -288,7 +293,9 @@ offset_bottom = 8.5
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(2, 2)
-max_value = 10.0
+min_value = 1.0
+max_value = 40.0
+value = 25.0
 script = ExtResource("4_sbjtm")
 sliderText = NodePath("Count")
 
@@ -306,7 +313,7 @@ offset_bottom = 14.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
-text = "0
+text = "25
 "
 horizontal_alignment = 1
 vertical_alignment = 1
