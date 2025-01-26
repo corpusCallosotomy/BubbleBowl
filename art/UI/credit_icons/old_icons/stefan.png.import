@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkde8vkwpkjxf"
-path="res://.godot/imported/Kiron.png-1f4ec073f1b1e0a8aa61a14af5362ded.ctex"
+uid="uid://bmu4yme53cyil"
+path="res://.godot/imported/stefan.png-19852c912bf6d7e1fd43a0ba6d920690.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/UI/credit_icons/Kiron.png"
-dest_files=["res://.godot/imported/Kiron.png-1f4ec073f1b1e0a8aa61a14af5362ded.ctex"]
+source_file="res://art/UI/credit_icons/old_icons/stefan.png"
+dest_files=["res://.godot/imported/stefan.png-19852c912bf6d7e1fd43a0ba6d920690.ctex"]
 
 [params]
 
