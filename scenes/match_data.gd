@@ -10,7 +10,9 @@ var bubbles =[] # holds objects for all bubbles on screen
 
 var spawnRate: float = 3.0
 var maxBubbles = 25
+var bubbleCount: int = 0
 var spikedEnabled = false
+var spikeCount: int = 0
 
 
 
