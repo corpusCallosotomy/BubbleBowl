@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmu4yme53cyil"
-path="res://.godot/imported/stefan.png-a4824642ffeb606758c75c0eeba5530f.ctex"
+uid="uid://dlb6aqjmwt41"
+path="res://.godot/imported/stefan.png-5f1d258574f93454dd3f8ed4d6f34573.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/UI/credit_icons/stefan.png"
-dest_files=["res://.godot/imported/stefan.png-a4824642ffeb606758c75c0eeba5530f.ctex"]
+source_file="res://art/UI/credit_icons/new_icons/stefan.png"
+dest_files=["res://.godot/imported/stefan.png-5f1d258574f93454dd3f8ed4d6f34573.ctex"]
 
 [params]
 

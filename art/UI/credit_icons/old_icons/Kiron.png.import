@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bng4dhp6dprao"
-path="res://.godot/imported/Moonfish.png-491d600a2bf281d1252c275a5b072999.ctex"
+uid="uid://dkde8vkwpkjxf"
+path="res://.godot/imported/Kiron.png-c072c1a3c1be32935e23cdf13dad1fa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/UI/credit_icons/Moonfish.png"
-dest_files=["res://.godot/imported/Moonfish.png-491d600a2bf281d1252c275a5b072999.ctex"]
+source_file="res://art/UI/credit_icons/old_icons/Kiron.png"
+dest_files=["res://.godot/imported/Kiron.png-c072c1a3c1be32935e23cdf13dad1fa8.ctex"]
 
 [params]
 

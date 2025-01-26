@@ -52,8 +52,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+offset_top = -40.0
+offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 2.51
@@ -116,6 +116,60 @@ grow_vertical = 2
 size_flags_stretch_ratio = 42.85
 theme_override_constants/separation = 10
 alignment = 1
+
+[node name="Max Score" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Max Score"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -24.5
+offset_right = 331.0
+offset_bottom = 25.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "Max Score"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/ButtonMenu/VBoxContainer/Max Score" node_paths=PackedStringArray("sliderText")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -482.0
+offset_top = -7.5
+offset_right = -294.0
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(2, 2)
+max_value = 10.0
+script = ExtResource("4_sbjtm")
+sliderText = NodePath("Count")
+
+[node name="Count" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -15.0
+offset_right = 43.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SpikeBubbles" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
 layout_mode = 2
@@ -292,6 +346,9 @@ script = ExtResource("2_gv7wd")
 nextScene = "res://scenes/screens/arena/arena.tscn"
 
 [connection signal="pressed" from="CanvasLayer/Title/ExitButton" to="CanvasLayer/Title/ExitButton" method="_on_pressed"]
+[connection signal="drag_started" from="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" method="_on_drag_started"]
+[connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Max Score/HSlider/Count" method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/CheckButton" to="CanvasLayer/ButtonMenu/VBoxContainer/SpikeBubbles/CheckButton" method="_on_toggled"]
 [connection signal="drag_started" from="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" method="_on_drag_started"]
 [connection signal="value_changed" from="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" to="CanvasLayer/ButtonMenu/VBoxContainer/Bubble Spawn Speed/HSlider" method="_on_value_changed"]
