@@ -118,7 +118,6 @@ position = Vector2(347, 617)
 [node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
 position = Vector2(347, 753)
 
-
 [node name="ScoreDisplay" type="Node2D" parent="." node_paths=PackedStringArray("score1Display", "score2Display")]
 position = Vector2(960, 0)
 script = ExtResource("6_alnfp")
