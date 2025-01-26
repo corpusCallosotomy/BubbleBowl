@@ -16,7 +16,7 @@ func _process(_delta):
 func _on_body_entered(body):
 	#print(body)
 	if body.is_in_group("Bubble"):
-		body.queue_free()
+		body.killBubble()
 		var scoreToAdd = body.bubbleValue
 		if isPlayer1Goal:
 			MatchData.Score(0,scoreToAdd)
