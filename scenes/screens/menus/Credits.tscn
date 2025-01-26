@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://babfvwlmtr3ys"]
+[gd_scene load_steps=18 format=3 uid="uid://babfvwlmtr3ys"]
 
 [ext_resource type="Texture2D" uid="uid://lkgpki1evqsg" path="res://art/UI/Buttons/Back_Button_Hover.png" id="1_1f1f8"]
 [ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_5utts"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://f3fds8gkrko0" path="res://art/UI/credit_icons/new_icons/Joshua.jpg" id="7_gydcs"]
 [ext_resource type="Texture2D" uid="uid://btcorpagb0nbo" path="res://art/UI/credit_icons/new_icons/max.png" id="8_evda8"]
 [ext_resource type="Texture2D" uid="uid://dlb6aqjmwt41" path="res://art/UI/credit_icons/new_icons/stefan.png" id="9_smtvr"]
+[ext_resource type="Texture2D" uid="uid://dphapnburcl55" path="res://art/UI/credit_icons/new_icons/Michael.png" id="10_pujtw"]
 [ext_resource type="Texture2D" uid="uid://bi50agtmumvtq" path="res://art/UI/credit_icons/new_icons/Xavier.jpg" id="10_vul4o"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fif3c"]
@@ -41,7 +42,8 @@ corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
 
 [sub_resource type="LabelSettings" id="LabelSettings_jpr2e"]
-font_size = 50
+line_spacing = -10.0
+font_size = 35
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -154,7 +156,8 @@ offset_right = 419.0
 offset_bottom = 1.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "George"
+text = "George 
+Eltzroth"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -163,12 +166,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 210.0
-offset_top = -17.5
-offset_right = 419.0
-offset_bottom = 55.5
+offset_left = 212.0
+offset_top = 19.5
+offset_right = 421.0
+offset_bottom = 92.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Programmer"
 vertical_alignment = 1
 
@@ -196,13 +199,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 214.0
-offset_top = -83.5
-offset_right = 423.0
-offset_bottom = 1.5
+offset_left = 194.0
+offset_top = -77.5
+offset_right = 403.0
+offset_bottom = 10.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 36
-text = "Jake"
+theme_override_font_sizes/font_size = 90
+text = "Jake
+Sensiba"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -211,12 +215,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 214.0
-offset_top = -17.5
-offset_right = 423.0
-offset_bottom = 55.5
+offset_left = 191.0
+offset_top = -1.5
+offset_right = 400.0
+offset_bottom = 71.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Audio Dev"
 vertical_alignment = 1
 
@@ -244,13 +248,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 215.0
-offset_top = -83.5
-offset_right = 424.0
-offset_bottom = 1.5
+offset_left = 195.0
+offset_top = -74.5
+offset_right = 404.0
+offset_bottom = 13.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Jeb"
+text = "Jeb 
+Hunt"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -259,12 +264,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 214.0
-offset_top = -17.5
-offset_right = 423.0
-offset_bottom = 55.5
+offset_left = 192.0
+offset_top = -1.5
+offset_right = 401.0
+offset_bottom = 71.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Artist"
 vertical_alignment = 1
 
@@ -292,13 +297,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 213.0
-offset_top = -83.5
-offset_right = 422.0
-offset_bottom = 1.5
+offset_left = 218.0
+offset_top = -85.0
+offset_right = 427.0
+offset_bottom = 3.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Joel"
+text = "Joel
+Joshi"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -307,12 +313,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 210.0
-offset_top = -17.5
-offset_right = 431.0
-offset_bottom = 55.5
+offset_left = 212.0
+offset_top = 25.5
+offset_right = 433.0
+offset_bottom = 98.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Programmer"
 vertical_alignment = 1
 
@@ -346,7 +352,8 @@ offset_right = 424.0
 offset_bottom = 1.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Joshua"
+text = "Joshua
+Sime"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -355,12 +362,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 215.0
-offset_top = -17.5
-offset_right = 424.0
-offset_bottom = 55.5
+offset_left = 210.0
+offset_top = 21.5
+offset_right = 419.0
+offset_bottom = 94.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Producer"
 vertical_alignment = 1
 
@@ -388,13 +395,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 210.0
-offset_top = -83.5
-offset_right = 419.0
-offset_bottom = 1.5
+offset_left = 189.0
+offset_top = -73.5
+offset_right = 407.0
+offset_bottom = 14.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Kiron"
+text = "Kiron
+Khashnobish"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -403,12 +411,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 215.0
-offset_top = -17.5
-offset_right = 424.0
-offset_bottom = 55.5
+offset_left = 194.0
+offset_top = 0.5
+offset_right = 403.0
+offset_bottom = 73.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Artist"
 vertical_alignment = 1
 
@@ -436,13 +444,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 208.0
-offset_top = -83.5
-offset_right = 417.0
-offset_bottom = 1.5
+offset_left = 211.0
+offset_top = -85.0
+offset_right = 420.0
+offset_bottom = 3.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Max"
+text = "Maximilan 
+Fowlke"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -452,11 +461,11 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 214.0
-offset_top = -12.0
+offset_top = 12.5
 offset_right = 435.0
-offset_bottom = 40.0
+offset_bottom = 64.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Lead
 "
 vertical_alignment = 1
@@ -467,11 +476,11 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 214.0
-offset_top = 12.0
+offset_top = 28.5
 offset_right = 435.0
-offset_bottom = 87.0
+offset_bottom = 103.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Programmer"
 vertical_alignment = 1
 
@@ -499,13 +508,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 205.0
-offset_top = -83.5
-offset_right = 414.0
-offset_bottom = 1.5
+offset_left = 217.0
+offset_top = -93.5
+offset_right = 426.0
+offset_bottom = -5.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Michael"
+text = "Michael
+Guevara"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -514,12 +524,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 215.0
-offset_top = -17.5
-offset_right = 436.0
-offset_bottom = 55.5
+offset_left = 217.0
+offset_top = 16.5
+offset_right = 438.0
+offset_bottom = 89.5
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "VFX Artist"
 vertical_alignment = 1
 
@@ -533,7 +543,7 @@ offset_top = -93.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("5_y8s6l")
+texture = ExtResource("10_pujtw")
 expand_mode = 1
 
 [node name="Moonfish" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
@@ -547,13 +557,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 185.0
-offset_top = -83.5
-offset_right = 435.0
-offset_bottom = 1.5
+offset_left = 180.0
+offset_top = -74.0
+offset_right = 430.0
+offset_bottom = 14.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Moonfish"
+text = "Alex
+Moon"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -562,12 +573,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 203.0
-offset_top = -29.0
-offset_right = 412.0
-offset_bottom = 44.0
+offset_left = 182.0
+offset_top = 3.0
+offset_right = 391.0
+offset_bottom = 76.0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Audio Dev"
 vertical_alignment = 1
 
@@ -601,7 +612,8 @@ offset_right = 419.0
 offset_bottom = 1.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Stefan"
+text = "Stefan
+Cherry"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -610,12 +622,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 219.0
-offset_top = -17.5
-offset_right = 428.0
-offset_bottom = 55.5
+offset_left = 217.0
+offset_top = 18.0
+offset_right = 426.0
+offset_bottom = 91.0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Artist"
 vertical_alignment = 1
 
@@ -649,7 +661,8 @@ offset_right = 425.0
 offset_bottom = 1.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Xavier"
+text = "Xavier
+Grubb"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
@@ -658,12 +671,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 216.0
-offset_top = -17.5
-offset_right = 437.0
-offset_bottom = 55.5
+offset_left = 211.0
+offset_top = 22.0
+offset_right = 432.0
+offset_bottom = 95.0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Programmer"
 vertical_alignment = 1
 
