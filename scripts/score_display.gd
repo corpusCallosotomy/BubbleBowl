@@ -5,8 +5,8 @@ extends Node
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	score1.text = str(MatchData.getScore(0))
-	score2.text = str(MatchData.getScore(1))
+	score1.text = str(MatchData.getScore(1))
+	score2.text = str(MatchData.getScore(0))
 	
 	
 	pass
