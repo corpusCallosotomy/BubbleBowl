@@ -13,6 +13,7 @@ var maxBubbles = 25
 var bubbleCount: int = 0
 var spikedEnabled = false
 var spikeCount: int = 0
+var maxScore = 100
 
 
 

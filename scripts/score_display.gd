@@ -3,7 +3,7 @@ extends Node
 @export var score1Display: Label
 @export var score2Display: Label
 
-@export var endScore: int = 100
+#@export var endScore: int = 100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -12,8 +12,7 @@ func _process(delta: float) -> void:
 
 	score1Display.text = str(score1)
 	score2Display.text = str(score2)
-
 	
 	#end match
-	if score1 >= endScore or score2 >= endScore:
+	if score1 >= MatchData.maxScore or score2 >= MatchData.maxScore:
 		get_tree().change_scene_to_file("res://scenes/screens/menus/MatchEnd.tscn")
