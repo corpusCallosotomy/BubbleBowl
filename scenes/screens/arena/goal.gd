@@ -22,3 +22,8 @@ func _on_body_entered(body):
 			MatchData.Score(0,scoreToAdd)
 		else:
 			MatchData.Score(1,scoreToAdd)
+
+		if not $AudioStreamPlayer2D.playing:
+			$AudioStreamPlayer2D.pitch_scale = 0.9 + (scoreToAdd/10.0)
+
+			$AudioStreamPlayer2D.play()
