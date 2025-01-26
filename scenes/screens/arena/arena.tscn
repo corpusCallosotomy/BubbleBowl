@@ -118,11 +118,13 @@ position = Vector2(347, 617)
 [node name="Bubble2" parent="." instance=ExtResource("2_rqac2")]
 position = Vector2(347, 753)
 
-[node name="ScoreDisplay" type="Node2D" parent="." node_paths=PackedStringArray("score1", "score2")]
+
+[node name="ScoreDisplay" type="Node2D" parent="." node_paths=PackedStringArray("score1Display", "score2Display")]
 position = Vector2(960, 0)
 script = ExtResource("6_alnfp")
-score1 = NodePath("Score1")
-score2 = NodePath("Score2")
+score1Display = NodePath("Score1")
+score2Display = NodePath("Score2")
+endScore = 1
 
 [node name="Score1" type="Label" parent="ScoreDisplay"]
 modulate = Color(1, 0, 0, 1)
