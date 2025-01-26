@@ -56,13 +56,25 @@ func bodyEntered(body):
 				#self.queue_free()
 				return
 			else:
-				if bubbleSize<5:
+				if bubbleSize<4:
 					bubbleSize+=1
-					bubbleValue+=1
+					match bubbleSize:
+						2:
+							bubbleValue = 3
+						3:
+							bubbleValue = 7
+						4:
+							bubbleValue = 15
+					
 					increaseBubbleScale()
-					# We do NOT call the kill function here because we're making the illusion that this bubble
-					# GREW into the new one.
+					# We do NOT call the kill function here because this bubble GROWS into the bigger one.
+					# Well, the OTHER bubble does. THIS ONE just dies. Two bubbles become one.
+					MatchData.bubbleCount-=1
 					body.queue_free()
+				else:
+					# Pop both bubbles if they're both size 4 already
+					body.killBubble()
+					self.killBubble()
 		
 	
 		
@@ -85,4 +97,5 @@ func _on_body_entered(body):
 	bodyEntered(body)
 
 func killBubble():
+	MatchData.bubbleCount-=1
 	queue_free()
