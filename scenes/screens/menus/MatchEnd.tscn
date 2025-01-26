@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cran8bdnnr1va"]
+[gd_scene load_steps=10 format=3 uid="uid://cran8bdnnr1va"]
 
 [ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_ji7ms"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_qywtj"]
+[ext_resource type="Script" path="res://scenes/screens/menus/endscore.gd" id="2_r05ci"]
 [ext_resource type="Texture2D" uid="uid://b6mmuy17p4u77" path="res://art/UI/Buttons/Button_Highlighted.png" id="3_7xob4"]
 [ext_resource type="Texture2D" uid="uid://bfhf585p6v86g" path="res://art/UI/Buttons/Button_Base.png" id="4_x2wuc"]
 
@@ -92,11 +93,12 @@ size_flags_stretch_ratio = 42.85
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Score" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+[node name="Score1" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("2_r05ci")
 
-[node name="ScoreTextLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score"]
+[node name="ScoreTextLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score1"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -107,9 +109,9 @@ offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "Score: "
+text = "Player 1 Score: "
 
-[node name="ScoreNumLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score"]
+[node name="ScoreNumLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score1"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -126,11 +128,12 @@ theme_override_font_sizes/font_size = 56
 text = "0000"
 horizontal_alignment = 2
 
-[node name="Time" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
+[node name="Score2" type="Panel" parent="CanvasLayer/ButtonMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("2_r05ci")
 
-[node name="TimeTextLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Time"]
+[node name="ScoreTextLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score2"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -141,9 +144,9 @@ offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 56
-text = "Time: "
+text = "Player 2 Score: "
 
-[node name="TimeNumLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Time"]
+[node name="ScoreNumLabel" type="Label" parent="CanvasLayer/ButtonMenu/VBoxContainer/Score2"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

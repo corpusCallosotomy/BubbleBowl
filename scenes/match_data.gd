@@ -38,4 +38,5 @@ func Score(team: int,size: int) -> void:
 	scores[team] +=size
 	
 func getScore(team: int) -> int:
+		print(scores[team])
 		return scores[team]
