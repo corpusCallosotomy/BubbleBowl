@@ -5,6 +5,11 @@ extends RigidBody2D
 @export var spriteParent: Node2D
 @export var sprite: AnimatedSprite2D
 
+@export var sound_collideWithWall: AudioStream
+@export var sound_collideWithSeal: AudioStream
+@export var sound_collideWithBubble: AudioStream
+@export var sound_mergeWithBubble: AudioStream
+
 var wobble = 0.0
 var angle = 0.0
 
@@ -48,7 +53,7 @@ func bodyEntered(body):
 	if body.is_in_group("Bubble"):
 		#print("Bubble hit a bubble")
 		if body.bubbleSize==self.bubbleSize:
-			
+			playSound(sound_collideWithBubble)
 			var selfIndex = self.get_index()
 			var bodyIndex = body.get_index()
 
@@ -75,13 +80,18 @@ func bodyEntered(body):
 					# Pop both bubbles if they're both size 4 already
 					body.killBubble()
 					self.killBubble()
-		
+		else:
+			playSound(sound_mergeWithBubble)
 	
 		
 			
 		# CHECK IF BUBBLE IS THE SAME SIZE
 		# CHECK WHICH BUBBLE IS HIGHER IN SCENE TREE. LOWER BUBBLE DIES INSTANTLY
 		# HIGHER BUBBLE SPAWNS BUBBLE OF NEXT SIZE
+	elif body.is_in_group("Environment"):
+		playSound(sound_collideWithWall)
+	elif body.is_in_group("Player"):
+		playSound(sound_collideWithSeal)
 
 func increaseBubbleScale():
 	$CollisionShape2D.shape.radius=40+(bubbleSize*10)
@@ -95,6 +105,24 @@ func increaseBubbleScale():
 func _on_body_entered(body):
 	#print("HELP")
 	bodyEntered(body)
+
+const soundCooldown = 500
+var lastSoundPlayed: int
+
+func playSound(sound: AudioStream):	
+	var currentTime = Time.get_ticks_msec()
+	
+	if currentTime - lastSoundPlayed < soundCooldown:
+		return
+	
+	lastSoundPlayed = currentTime
+	var player = $AudioStreamPlayer2D
+	player.playing = false
+	player.stream = sound
+	
+	player.pitch_scale = (1.0 / sqrt(bubbleSize)) + randf_range(-0.1, 0.1)
+	
+	player.play()
 
 func killBubble():
 	MatchData.bubbleCount-=1
