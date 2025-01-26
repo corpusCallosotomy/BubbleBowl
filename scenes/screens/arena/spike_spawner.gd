@@ -5,6 +5,8 @@ var spikeScene = preload("res://scenes/bubbles/SpikeBubble.tscn")
 
 
 func _ready():
+	print("meme")
+	print("hello ",MatchData.spikeCount)
 	if MatchData.spikeCount==0:
 		queue_free()
 	else:
