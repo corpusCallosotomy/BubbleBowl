@@ -12,7 +12,8 @@ var spawnRate: float = 3.0
 var maxBubbles = 25
 var bubbleCount: int = 0
 var spikedEnabled = false
-var spikeCount: int = 10
+var spikeCount: int = 1
+var maxScore = 100
 
 
 
