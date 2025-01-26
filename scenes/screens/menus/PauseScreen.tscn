@@ -1,0 +1,288 @@
+[gd_scene load_steps=15 format=3 uid="uid://w66vadkynyw8"]
+
+[ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_2458e"]
+[ext_resource type="Texture2D" uid="uid://lkgpki1evqsg" path="res://art/UI/Buttons/Back_Button_Hover.png" id="2_p4nrc"]
+[ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/UI/Buttons/Back_Button.png" id="3_dlt18"]
+[ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="4_3nwua"]
+[ext_resource type="Script" path="res://scripts/menu_scripts/settings/muteToggle.gd" id="5_d2do6"]
+[ext_resource type="Texture2D" uid="uid://b6mmuy17p4u77" path="res://art/UI/Buttons/Button_Highlighted.png" id="6_1syyy"]
+[ext_resource type="Script" path="res://scripts/menu_scripts/settings/volume_slider.gd" id="6_42rlk"]
+[ext_resource type="Texture2D" uid="uid://bfhf585p6v86g" path="res://art/UI/Buttons/Button_Base.png" id="7_kdxkp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln5ai"]
+bg_color = Color(0, 0, 0, 0.231373)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxgou"]
+texture = ExtResource("2_p4nrc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4gdx"]
+texture = ExtResource("3_dlt18")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmvfr"]
+bg_color = Color(0, 0, 0, 0.52549)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhb41"]
+texture = ExtResource("6_1syyy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vkouq"]
+texture = ExtResource("7_kdxkp")
+
+[node name="PauseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 581.0
+offset_top = 90.0
+offset_right = -562.0
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0313726, 0.0313726, 0.0313726, 0.454902)
+
+[node name="Title" type="Panel" parent="CanvasLayer/BG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_right = 3.0
+offset_bottom = 179.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ln5ai")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/BG/Title"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 2.51
+theme_override_fonts/normal_font = ExtResource("1_2458e")
+theme_override_font_sizes/normal_font_size = 106
+bbcode_enabled = true
+text = "[center]Pause[/center]"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/BG/Title"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_top = 11.0
+offset_right = -15.0
+offset_bottom = 142.0
+grow_horizontal = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxTexture_mxgou")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i4gdx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ButtonMenu" type="Panel" parent="CanvasLayer/BG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.5
+offset_top = -250.5
+offset_right = 370.5
+offset_bottom = 401.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tmvfr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BG/ButtonMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 42.85
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MuteToggle" type="Panel" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer/MuteToggle"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 110.24
+offset_top = -19.74
+offset_right = 154.24
+offset_bottom = 4.26
+grow_vertical = 2
+scale = Vector2(1.925, 1.925)
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_d2do6")
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer/MuteToggle"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Mute"
+
+[node name="Main Slider" type="Panel" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer/Main Slider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -395.0
+offset_top = -7.5
+offset_right = 2.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+value = 50.0
+script = ExtResource("6_42rlk")
+bus_name = "Master"
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer/Main Slider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Volume"
+
+[node name="Music Slider" type="Panel" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer/Music Slider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -7.5
+offset_right = 2.0
+offset_bottom = 14.5
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 50.0
+script = ExtResource("6_42rlk")
+bus_name = "Music"
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer/Music Slider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Music"
+
+[node name="SFX Slider" type="Panel" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer/SFX Slider"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -459.0
+offset_top = -7.5
+offset_right = 2.0
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 50.0
+script = ExtResource("6_42rlk")
+bus_name = "SFX"
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer/SFX Slider"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "SFX"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/BG/ButtonMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_2458e")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxTexture_dhb41")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vkouq")
+text = "Quit"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_3nwua")
+nextScene = "res://scenes/screens/menus/TitleScreen.tscn"
+
+[connection signal="pressed" from="CanvasLayer/BG/Title/ResumeButton" to="CanvasLayer/BG/Title/ResumeButton" method="_on_pressed"]
+[connection signal="toggled" from="CanvasLayer/BG/ButtonMenu/VBoxContainer/MuteToggle/CheckButton" to="CanvasLayer/BG/ButtonMenu/VBoxContainer/MuteToggle/CheckButton" method="_on_toggled"]
+[connection signal="drag_started" from="CanvasLayer/BG/ButtonMenu/VBoxContainer/Main Slider/HSlider" to="CanvasLayer/BG/ButtonMenu/VBoxContainer/Main Slider/HSlider" method="_on_drag_started"]
+[connection signal="drag_started" from="CanvasLayer/BG/ButtonMenu/VBoxContainer/Music Slider/HSlider" to="CanvasLayer/BG/ButtonMenu/VBoxContainer/Music Slider/HSlider" method="_on_drag_started"]
+[connection signal="drag_started" from="CanvasLayer/BG/ButtonMenu/VBoxContainer/SFX Slider/HSlider" to="CanvasLayer/BG/ButtonMenu/VBoxContainer/SFX Slider/HSlider" method="_on_drag_started"]
+[connection signal="pressed" from="CanvasLayer/BG/ButtonMenu/VBoxContainer/ExitButton" to="CanvasLayer/BG/ButtonMenu/VBoxContainer/ExitButton" method="_on_pressed"]

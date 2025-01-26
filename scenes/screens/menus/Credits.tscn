@@ -1,20 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://babfvwlmtr3ys"]
+[gd_scene load_steps=17 format=3 uid="uid://babfvwlmtr3ys"]
 
 [ext_resource type="Texture2D" uid="uid://lkgpki1evqsg" path="res://art/UI/Buttons/Back_Button_Hover.png" id="1_1f1f8"]
 [ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_5utts"]
-[ext_resource type="Texture2D" uid="uid://bhwkvnwd7rxj0" path="res://art/UI/credit_icons/george.png" id="1_ti6ek"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_1rnxj"]
 [ext_resource type="Texture2D" uid="uid://cykc2eqfpldio" path="res://art/UI/Buttons/Back_Button.png" id="2_m244x"]
-[ext_resource type="Texture2D" uid="uid://dn1ghbifomcp5" path="res://art/UI/credit_icons/jake.png" id="2_uphsr"]
-[ext_resource type="Texture2D" uid="uid://f44rlkum2mmr" path="res://art/UI/credit_icons/jeb.png" id="3_cipor"]
-[ext_resource type="Texture2D" uid="uid://c3dhluqug7ayg" path="res://art/UI/credit_icons/joel.png" id="4_c8htr"]
-[ext_resource type="Texture2D" uid="uid://dfnlwtkso4tbg" path="res://art/UI/credit_icons/joshua.png" id="5_6rc5r"]
-[ext_resource type="Texture2D" uid="uid://dkde8vkwpkjxf" path="res://art/UI/credit_icons/Kiron.png" id="6_mt0q7"]
-[ext_resource type="Texture2D" uid="uid://bnkq67wc32x3l" path="res://art/UI/credit_icons/max.png" id="7_ko3tf"]
-[ext_resource type="Texture2D" uid="uid://dhjw1arwihtgg" path="res://art/UI/credit_icons/michael.png" id="8_13c0k"]
-[ext_resource type="Texture2D" uid="uid://bng4dhp6dprao" path="res://art/UI/credit_icons/Moonfish.png" id="9_c82tw"]
-[ext_resource type="Texture2D" uid="uid://bmu4yme53cyil" path="res://art/UI/credit_icons/stefan.png" id="10_3g1ry"]
-[ext_resource type="Texture2D" uid="uid://6jk1fh67sg6b" path="res://art/UI/credit_icons/xavier.png" id="11_hvkm1"]
+[ext_resource type="Texture2D" uid="uid://kjttxvk638d6" path="res://art/UI/credit_icons/new_icons/George.jpg" id="5_x3qrd"]
+[ext_resource type="Texture2D" uid="uid://f3pxe5up6x5m" path="res://art/UI/credit_icons/new_icons/noImage.png" id="5_y8s6l"]
+[ext_resource type="Texture2D" uid="uid://bdia4ixx6xp85" path="res://art/UI/credit_icons/new_icons/Joel.jpg" id="6_7f1po"]
+[ext_resource type="Texture2D" uid="uid://f3fds8gkrko0" path="res://art/UI/credit_icons/new_icons/Joshua.jpg" id="7_gydcs"]
+[ext_resource type="Texture2D" uid="uid://btcorpagb0nbo" path="res://art/UI/credit_icons/new_icons/max.png" id="8_evda8"]
+[ext_resource type="Texture2D" uid="uid://dlb6aqjmwt41" path="res://art/UI/credit_icons/new_icons/stefan.png" id="9_smtvr"]
+[ext_resource type="Texture2D" uid="uid://bi50agtmumvtq" path="res://art/UI/credit_icons/new_icons/Xavier.jpg" id="10_vul4o"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fif3c"]
 texture = ExtResource("1_1f1f8")
@@ -181,12 +177,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = -83.5
+offset_left = 40.0
+offset_top = -90.5
 offset_right = 204.0
-offset_bottom = 83.5
+offset_bottom = 80.5
 grow_vertical = 2
-texture = ExtResource("1_ti6ek")
+texture = ExtResource("5_x3qrd")
+expand_mode = 1
 
 [node name="Jake" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -229,11 +226,12 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 25.0
-offset_top = -83.5
+offset_top = -98.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("2_uphsr")
+texture = ExtResource("5_y8s6l")
+expand_mode = 1
 
 [node name="Jeb" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -276,11 +274,12 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 25.0
-offset_top = -83.5
+offset_top = -100.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("3_cipor")
+texture = ExtResource("5_y8s6l")
+expand_mode = 1
 
 [node name="Joel" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -323,11 +322,12 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 25.0
-offset_top = -83.5
+offset_top = -91.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("4_c8htr")
+texture = ExtResource("6_7f1po")
+expand_mode = 1
 
 [node name="Joshua" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -369,12 +369,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 25.0
+offset_left = 30.0
 offset_top = -83.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("5_6rc5r")
+texture = ExtResource("7_gydcs")
+expand_mode = 1
 
 [node name="Kiron" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -417,11 +418,12 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 25.0
-offset_top = -83.5
+offset_top = -95.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("6_mt0q7")
+texture = ExtResource("5_y8s6l")
+expand_mode = 1
 
 [node name="Max" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -483,7 +485,8 @@ offset_top = -83.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("7_ko3tf")
+texture = ExtResource("8_evda8")
+expand_mode = 1
 
 [node name="Michael" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -496,9 +499,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 212.0
+offset_left = 205.0
 offset_top = -83.5
-offset_right = 421.0
+offset_right = 414.0
 offset_bottom = 1.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
@@ -526,11 +529,12 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 25.0
-offset_top = -83.5
+offset_top = -93.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("8_13c0k")
+texture = ExtResource("5_y8s6l")
+expand_mode = 1
 
 [node name="Moonfish" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -543,9 +547,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 210.0
+offset_left = 185.0
 offset_top = -83.5
-offset_right = 460.0
+offset_right = 435.0
 offset_bottom = 1.5
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
@@ -558,10 +562,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 216.0
-offset_top = -17.5
-offset_right = 425.0
-offset_bottom = 55.5
+offset_left = 203.0
+offset_top = -29.0
+offset_right = 412.0
+offset_bottom = 44.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Audio Dev"
@@ -572,12 +576,13 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = -83.5
-offset_right = 204.0
-offset_bottom = 83.5
+offset_left = 18.0
+offset_top = -94.0
+offset_right = 197.0
+offset_bottom = 84.0
 grow_vertical = 2
-texture = ExtResource("9_c82tw")
+texture = ExtResource("5_y8s6l")
+expand_mode = 1
 
 [node name="Stefan" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -624,7 +629,8 @@ offset_top = -83.5
 offset_right = 204.0
 offset_bottom = 83.5
 grow_vertical = 2
-texture = ExtResource("10_3g1ry")
+texture = ExtResource("9_smtvr")
+expand_mode = 1
 
 [node name="Xavier" type="Panel" parent="CanvasLayer/ButtonMenu/GridContainer"]
 layout_mode = 2
@@ -666,11 +672,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = -83.5
+offset_left = 29.0
+offset_top = -83.0
 offset_right = 204.0
-offset_bottom = 83.5
+offset_bottom = 84.0
 grow_vertical = 2
-texture = ExtResource("11_hvkm1")
+texture = ExtResource("10_vul4o")
+expand_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/Title/ExitButton" to="CanvasLayer/Title/ExitButton" method="_on_pressed"]
