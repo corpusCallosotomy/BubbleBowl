@@ -1,22 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cran8bdnnr1va"]
+[gd_scene load_steps=6 format=3 uid="uid://cran8bdnnr1va"]
 
 [ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="1_ji7ms"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/sceneSwitchButton.gd" id="2_qywtj"]
 [ext_resource type="Script" path="res://scenes/screens/menus/endscore.gd" id="2_r05ci"]
-[ext_resource type="Texture2D" uid="uid://b6mmuy17p4u77" path="res://art/UI/Buttons/Button_Highlighted.png" id="3_7xob4"]
-[ext_resource type="Texture2D" uid="uid://bfhf585p6v86g" path="res://art/UI/Buttons/Button_Base.png" id="4_x2wuc"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kamex"]
-texture = ExtResource("3_7xob4")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ukbb6"]
-texture = ExtResource("4_x2wuc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v486p"]
-texture = ExtResource("3_7xob4")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28mvn"]
-texture = ExtResource("4_x2wuc")
+[ext_resource type="StyleBox" uid="uid://bos66wfdey6cp" path="res://scenes/screens/menus/ButtonHover.tres" id="3_v167u"]
+[ext_resource type="StyleBox" uid="uid://5qf2uatyrts4" path="res://scenes/screens/menus/Button.tres" id="4_n2ag5"]
 
 [node name="MatchEnd" type="Control"]
 layout_mode = 3
@@ -108,6 +96,7 @@ offset_top = -24.5
 offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ji7ms")
 theme_override_font_sizes/font_size = 56
 text = "Player 1 Score: "
 
@@ -124,6 +113,7 @@ offset_right = -33.0
 offset_bottom = 39.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ji7ms")
 theme_override_font_sizes/font_size = 56
 text = "0000"
 horizontal_alignment = 2
@@ -144,6 +134,7 @@ offset_top = -24.5
 offset_right = 331.0
 offset_bottom = 25.5
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ji7ms")
 theme_override_font_sizes/font_size = 56
 text = "Player 2 Score: "
 
@@ -160,6 +151,7 @@ offset_right = -33.0
 offset_bottom = 39.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ji7ms")
 theme_override_font_sizes/font_size = 56
 text = "0000"
 horizontal_alignment = 2
@@ -181,45 +173,43 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/NavButtons"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PlayButton" type="Button" parent="CanvasLayer/NavButtons/HSplitContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/NavButtons"]
 layout_mode = 2
+offset_left = 260.0
+offset_right = 860.0
+offset_bottom = 200.0
 size_flags_horizontal = 3
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0.443137, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0.443137, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ji7ms")
 theme_override_font_sizes/font_size = 90
-theme_override_styles/hover = SubResource("StyleBoxTexture_kamex")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ukbb6")
+theme_override_styles/hover = ExtResource("3_v167u")
+theme_override_styles/normal = ExtResource("4_n2ag5")
 text = "REPLAY!"
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_qywtj")
 nextScene = "res://scenes/screens/arena/arena.tscn"
 
-[node name="MenuButton" type="Button" parent="CanvasLayer/NavButtons/HSplitContainer"]
+[node name="MenuButton" type="Button" parent="CanvasLayer/NavButtons"]
 layout_mode = 2
+offset_left = 1060.0
+offset_right = 1660.0
+offset_bottom = 200.0
 size_flags_horizontal = 3
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0.443137, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0.443137, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ji7ms")
 theme_override_font_sizes/font_size = 90
-theme_override_styles/hover = SubResource("StyleBoxTexture_v486p")
-theme_override_styles/normal = SubResource("StyleBoxTexture_28mvn")
+theme_override_styles/hover = ExtResource("3_v167u")
+theme_override_styles/normal = ExtResource("4_n2ag5")
 text = "Menu"
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_qywtj")
 nextScene = "res://scenes/screens/menus/TitleScreen.tscn"
 
-[connection signal="pressed" from="CanvasLayer/NavButtons/HSplitContainer/PlayButton" to="CanvasLayer/NavButtons/HSplitContainer/PlayButton" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/NavButtons/HSplitContainer/MenuButton" to="CanvasLayer/NavButtons/HSplitContainer/MenuButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/NavButtons/PlayButton" to="CanvasLayer/NavButtons/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/NavButtons/MenuButton" to="CanvasLayer/NavButtons/MenuButton" method="_on_pressed"]
