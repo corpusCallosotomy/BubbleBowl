@@ -1,18 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://pbnhy6mm8f56"]
-
+[gd_scene load_steps=20 format=3 uid="uid://dysj0hpncct4l"]
 
 [ext_resource type="PackedScene" uid="uid://cmkpgtxmycs8j" path="res://scenes/player/Player.tscn" id="1_etxjp"]
-[ext_resource type="PackedScene" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
-[ext_resource type="Texture2D" uid="uid://b8hixirqnrfff" path="res://scenes/screens/arena/fieldmap.png" id="3_khlq0"]
 [ext_resource type="PackedScene" uid="uid://0rjhmhgrhrex" path="res://scenes/screens/arena/goal.tscn" id="2_v7y4l"]
 [ext_resource type="Texture2D" uid="uid://ca4ll8jd3evah" path="res://scenes/screens/arena/quickbg.png" id="4_cehqr"]
 [ext_resource type="Script" path="res://scenes/screens/arena/bubble_spawner.gd" id="5_k3v74"]
-
 [ext_resource type="Script" path="res://scripts/score_display.gd" id="6_alnfp"]
 [ext_resource type="Texture2D" uid="uid://qoo2rshqtl53" path="res://VFX/Sand_Texture_V2.png" id="6_jblcl"]
+[ext_resource type="FontFile" uid="uid://dl8o4ya01bbxk" path="res://art/UI/Font/Coiny-Regular.ttf" id="6_r7cgw"]
 [ext_resource type="Shader" path="res://VFX/VFX_Scene_Test.gdshader" id="8_12cvm"]
 [ext_resource type="Texture2D" uid="uid://blqc01j3w6hci" path="res://icon.svg" id="9_6inbr"]
-
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3glh"]
 radius = 51.4781
@@ -26,6 +22,7 @@ size = Vector2(100, 500)
 /fonts/Font = SubResource("FontVariation_o0ld8")
 
 [sub_resource type="LabelSettings" id="LabelSettings_h56k3"]
+font = ExtResource("6_r7cgw")
 font_size = 72
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qnldv"]
@@ -50,7 +47,7 @@ shader_parameter/scroll1 = Vector2(0.01, 0.01)
 shader_parameter/scroll2 = Vector2(-0.05, -0.05)
 shader_parameter/distortion_strength = 0.0600001
 shader_parameter/tone_color = Color(0, 0.4, 1, 1)
-shader_parameter/top_color = Color(0, 1, 1, 1)
+shader_parameter/top_color = Color(0.3657, 0.53, 0.53, 1)
 shader_parameter/light_start = 0.1
 shader_parameter/light_end = 1.0
 shader_parameter/noise1 = SubResource("NoiseTexture2D_i8pnp")
@@ -162,3 +159,15 @@ material = SubResource("ShaderMaterial_rvomy")
 scale = Vector2(100, 100)
 texture = ExtResource("9_6inbr")
 
+[node name="ColorRect" type="ColorRect" parent="FloorSprite"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5030.0
+offset_top = -3312.0
+offset_right = -5030.0
+offset_bottom = -3312.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.333333)
