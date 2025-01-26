@@ -451,7 +451,7 @@ offset_bottom = 3.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
 text = "Maximilan 
-Fowlke"
+Fowlkes"
 label_settings = SubResource("LabelSettings_jpr2e")
 vertical_alignment = 1
 
